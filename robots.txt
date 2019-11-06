@@ -1,0 +1,3 @@
+User-agent: *
+Host: andrejsharapov.github.io
+Sitemap: https://andrejsharapov.github.io/sitemap.xml
