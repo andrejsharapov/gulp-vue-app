@@ -1,0 +1,326 @@
+@import '../vars'
+
+.bgpage
+    @include mq(lg)
+        background-image: url(/src/bg/home.svg)
+        background-position: calc(100% - 20px) 130px
+
+.git-btn
+    position: absolute
+    top: 1em
+    right: 1em
+    display: block
+
+    > span
+        display: inline-block
+        margin-left: $minw * 2
+
+        @include mq(lg)
+            margin-bottom: $minw * 2
+            display: block
+            text-align: right
+
+    @include mq(lg)
+        right: -5.25em
+
+    @include mq(xl)
+        right: -7em
+
+.pageName
+    animation: name 0.5s cubic-bezier(0.18, 0.89, 0.29, 1.05) 2.3s forwards
+
+.lead
+    span
+        display: block
+        opacity: 0
+        animation: lead 2s cubic-bezier(1, -1, 0.65, -1) forwards
+
+        &:nth-child(2)
+            animation-delay: 0.25s
+
+        &:nth-child(3)
+            animation-delay: 0.6s
+
+        &:nth-child(4)
+            animation-delay: 0.9s
+
+        @include mq(sm)
+            display: inline-block
+            margin-right: 0.75em
+            margin-left: 0.75em
+
+@include mq(lg)
+    .dots-large
+        position: absolute
+        top: 0
+        right: -20%
+        left: -20%
+        z-index: -1
+        height: 320px
+        background-image: url(/src/dots-large.svg)
+        background-position: center 10%
+
+    #about,
+    #timeline
+        background-color: $white
+
+.skill-grid-template
+    display: grid
+    grid-template-columns: 1fr
+    grid-gap: 2em
+
+    @include mq(md)
+        grid-template-columns: 1fr minmax(min-content, 320px)
+        grid-template-rows: 1fr
+
+    @include mq(lg)
+        grid-template-columns: 1fr minmax(min-content, 45%)
+        align-items: center
+
+.progress-bar
+    &-name
+        display: flex
+        justify-content: space-between
+        font-weight: bold        
+
+    &-status
+        margin-bottom: calc(#{$minw} * 4)
+
+        .progress-platform
+            width: 100%
+            height: 1px
+            background-color: $gray            
+
+        .progress-value
+            position: relative
+            top: -4px
+            height: 7px
+            border-radius: $minw
+            background-color: var(--col2a)
+            @include pagePalette(90deg, $subColor: var(--col2a))
+
+#counters
+    margin-top: $minw * 2
+    margin-bottom: $minw * 4
+    
+.counter
+    padding: $minw * 2
+    display: grid
+    grid-template-columns: 1fr
+    grid-gap: $minw
+
+    @media (min-width: $sm)
+        grid-template-columns: 1fr 1fr
+        grid-gap: $minw * 4
+
+    @media (min-width: $xl)
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        grid-gap: $minw * 2
+
+    p
+        margin-bottom: 0
+
+    &_block
+        display: inherit
+        grid-template-columns: minmax(max-content, 30%) 1fr
+        grid-gap: $minw * 4
+        align-items: center
+
+        @media (min-width: $xl)
+            grid-template-columns: 1fr
+
+    &__num
+        grid-row-end: 2
+
+        font-family: 'Merriweather', sans-serif
+        font-size: 11vw
+        font-weight: 900
+            
+        color: transparent
+        -webkit-background-clip: text
+                background-clip: text
+        @include pagePalette(-45deg, $subColor: var(--col2a))
+
+        @include mq(sm)
+            font-size: 5vw
+
+        @include mq(md)
+            font-size: 4vw
+            padding-left: $minw * 2
+
+        @include mq(lg)
+            font-size: 3vw
+
+    &__text
+        white-space: nowrap
+
+        @include mq(lg)
+            padding-left: $minw * 2
+    
+        span
+            display: block
+
+            font-size: 1.25rem
+            font-weight: 900
+
+.grid-projects
+    .project
+        display: grid
+        grid-gap: $minw * 2
+
+        @include mq(md)
+            grid-template-columns: 15% 50% minmax(auto, 45%)
+            grid-template-rows: min-content
+            align-items: center
+            justify-content: space-between
+
+        .to
+            margin-bottom: 0
+            font-size: 14px
+                
+            color: $darkgray
+
+        &-about
+            @include mq(md)
+                padding: calc(#{$minw} * 4)
+
+        &-caption
+            color: $darkgray
+            
+        &-image
+            position: relative
+            margin-right: calc(-1 * calc(#{$minw} * 4))
+            margin-bottom: calc(#{$minw} * 4)
+            margin-left: calc(-1 * calc(#{$minw} * 4))
+            display: block
+
+            @include mq(md)
+                margin-bottom: 2em
+                transition: all .4s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+
+                &::after
+                    position: absolute
+                    top: 0
+                    left: 0
+                    z-index: -1
+                    content: ''
+                    width: 100%
+                    height: 100%
+                    background-image: url(/src/dots-small.svg)
+
+            @include mq(lg)
+                margin: 0 2em 3em 0
+
+            img
+                display: block
+                margin: 0
+                width: 100%
+                max-height: 300px
+                object-fit: cover
+
+                @include mq(sm)
+                    border-radius: $minw * 2
+
+.cert-grid
+    position: relative
+    margin-bottom: calc(#{$minw} * 4)
+    display: grid
+    grid-gap: calc(#{$minw} * 4)
+
+    @include mq(sm)
+        grid-template-columns: 1fr 1fr
+
+    @include mq(lg)
+        grid-template-columns: repeat(5, 1fr)
+
+    .c-block
+        img
+            width: auto
+            object-fit: cover
+
+        p
+            margin-top: calc(#{$minw} * 2)
+
+.timeline
+    &-wrapper
+        position: relative
+        margin-bottom: calc(#{$minw}* 4)
+        display: grid
+        grid-gap: 15px
+
+        &::before
+            position: absolute
+            content: ''
+            top: -15px
+            bottom: -15px
+            left: 50%
+            width: 1px
+            background-color: $gray
+        
+        @include mq(lg)
+            grid-template-columns: repeat(3, 1fr)
+
+            &::before
+                top: 50%
+                bottom: auto
+                right: -15px
+                left: -15px
+                height: 1px
+                width: auto
+
+    &-content
+        position: relative
+        padding: calc(#{$minw} * 4)
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        background-color: $white
+        border: 1px solid $gray
+
+    &-meta
+        position: inherit
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+
+    &-head
+        margin-bottom: calc(#{$minw} * 2)
+        display: flex
+        flex-direction: column
+
+    &-data
+        white-space: nowrap
+        color: #798083
+
+    &-tag
+        position: absolute
+        top: 0
+        right: 0
+        padding-right: calc(#{$minw} * 2)
+        padding-left: calc(#{$minw} * 2)
+        line-height: 1.75em
+        text-transform: capitalize
+        color: #fff
+        background-color: var(--page-color)
+
+    &-desc
+        flex: 1
+
+@keyframes name
+    60%
+        transform: scale(1.1)
+
+@keyframes lead
+    0%
+        transform: scale(10)
+        filter: blur(10px)
+
+    50%,
+    100%
+        transform: scale(1)
+        opacity: 1
+        filter: blur(0px)
+
+@keyframes fly
+    50%
+        transform: rotateZ(45deg) translate(-20px, -20px)

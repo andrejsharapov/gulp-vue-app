@@ -1,0 +1,257 @@
+@import '../_vars'
+
+$timecolor: #b1b3b47F
+
+=bgi($deg)
+    background-image: linear-gradient($deg, var(--page-color), var(--sub-color))
+
+.bgpage
+    @include mq(lg)
+        background-image: url(/src/bg/timeline.svg)
+        background-position: calc(100% - 20px) 110px
+
+.timeline-wrapper
+    position: relative
+    margin: 2em auto
+    max-width: 90%
+    --side: 2em
+  
+    &::before
+        position: absolute
+        top: 0
+        left: 0
+        content: ''
+        width: 1px
+        height: 100%
+        background-color: $gray
+  
+    .timeline-content
+        position: relative
+        margin-bottom: calc(var(--side) / 2)
+        margin-left: var(--side)
+        padding: calc(#{$minw} * 4)
+        background-color: $white
+
+        .timeline-bg-white
+            position: absolute
+            top: -1px
+            right: -1px
+            bottom: -1px
+            left: -1px
+            z-index: 1
+            border: 1px solid $gray
+            background-color: $white
+    
+        &::before,
+        &::after
+            position: absolute
+            top: 50%            
+            content: ''
+        
+        &::after
+            transform: translateY(-50%)
+            right: calc(100% + calc(var(--side) / 1.35))
+            width: calc(var(--side) / 2)
+            height: calc(var(--side) / 2)
+            background-color: $gray
+        
+        &::before
+            margin-top: -1px
+            right: 100%
+            width: var(--side)
+            height: 1px
+            background-color: $gray
+
+    .timeline-meta
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+  
+    .timeline-head
+        margin-bottom: calc(#{$minw} * 2)
+        display: flex
+        flex-direction: column
+
+    .timeline-data
+        white-space: nowrap
+        color: #798083
+
+    .timeline-title
+        font-size: 1.25em
+    
+    .timeline-tag
+        position: absolute
+        top: calc(-1 * calc(#{$minw} * 2))
+        right: calc(-1 * calc(#{$minw} * 2))
+        padding-right: calc(#{$minw} * 2)
+        padding-left: calc(#{$minw} * 2)
+        line-height: 1.75em
+        text-transform: capitalize
+        color: $white
+        background-color: var(--page-color)
+
+        &.idea
+            background-color: var(--col7a)
+
+        &.twitter
+            background-color: var(--col2a)
+
+        &.behance
+            background-color: var(--col2b)
+
+        &.dev
+            background-color: var(--col3b)
+
+        &.codepen
+            background-color: var(--col5b)
+
+        &.dribbble,
+        &.figma
+            background-color: var(--col1b)
+
+        &.news
+            background-color: var(--col6b)
+
+        &.career
+            background-color: var(--col6b)
+
+        &.progress
+            background-color: var(--col3a)
+
+        &.other
+            background-color: var(--col4a)
+
+    .timeline-more
+        margin-bottom: 0
+        a
+            position: relative
+            display: inline-block
+            color: var(--page-color)
+            
+            &::before,
+            &::after
+                display: inline-block
+                transition: transform .3s,opacity .2s
+                opacity: 0
+
+            &::before
+                content: '«'
+                transform: translateX(2em)
+
+            &::after
+                content: '»'
+                transform: translateX(-2em)
+
+            &:hover
+                &::before
+                    transform: translateX(calc(-1 * #{$minw}))
+                    opacity: 1
+
+                &::after
+                    transform: translateX($minw)
+                    opacity: 1
+
+    .timeline-meta,
+    .timeline-desc,
+    .timeline-more
+        position: relative
+        z-index: 2
+
+@include mq(sm)
+    .timeline-wrapper
+        .timeline-meta
+            margin-bottom: calc(#{$minw} * 2)
+
+        .timeline-tag
+            position: relative
+            top: auto
+            right: auto
+
+@include mq(lg)
+    .timeline
+        background-image: url(/src/confetti-1.svg)
+        background-position: 0 50%
+        background-repeat: no-repeat
+        
+    .timeline-wrapper
+        --side: 4em
+
+        &::before
+            left: 50%
+    
+        .timeline-content
+            max-width: 49%
+            transition: all 200ms $cubic
+
+            .timeline-dots
+                position: absolute
+                top: 15px
+                left: 10px
+                z-index: 0
+                content: ''
+                width: 100%
+                height: 100%
+                background-image: url(/src/dots-small.svg)
+
+            &::after
+                width: calc(var(--side) / 3)
+                height: calc(var(--side) / 3)
+        
+            &:nth-child(even)
+                left: 49.5%
+
+                &:hover
+                    &::after
+                        @include bgi(-90deg)
+                
+            &:nth-child(odd)
+                margin-left: calc(var(--side) * -1)
+
+                .timeline-tag
+                    order: 0
+
+                .timeline-title
+                    order: 1
+                
+                &::before,
+                &::after
+                    transition: inherit
+                
+                &::after
+                    left: calc(100% + var(--side))
+                    z-index: 0
+                    
+                &::before
+                    left: 100%
+                    z-index: 1
+                
+                .timeline-data
+                    left: calc(100% + calc(var(--side) * 2))
+
+            &:hover,
+            &.isactive
+                transform: translate(-2px, -2px)
+                box-shadow: 20px 20px 20px $timecolor
+
+                .timeline-bg-white
+                    border-color: var(--page-color)
+                
+                &::after
+                    @include bgi(90deg)
+                    box-shadow: 5px 5px 2px $timecolor
+
+                &::before
+                    background-color: var(--page-color)
+                    box-shadow: 0px 5px 2px $timecolor
+                
+                .timeline-data
+                    color: var(--sub-color)
+
+        .timeline-data
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            bottom: auto
+            right: calc(100% + calc(var(--side) * 2))
+            font-size: 1rem
+            color: $gray

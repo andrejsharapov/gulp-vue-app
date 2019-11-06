@@ -1,0 +1,145 @@
+@import '../_vars'
+
+.bgpage
+    @include mq(lg)
+        background-image: url(/src/bg/contact.svg)
+        background-position: calc(100% - 20px) 125px
+
+.contacts
+    margin-top: 2em
+    margin-bottom: 2em
+    display: grid
+    grid-template-columns: 1fr
+    grid-gap: calc(#{$minw} * 4)
+
+    .card
+        max-width: 90%
+
+        p
+            display: flex
+            align-items: center
+
+            img
+                margin-right: .75em
+                width: $wsize
+
+    @include mq(md)
+        margin-bottom: 4em
+        grid-template-columns: 1fr 1fr
+        grid-gap: 1em
+
+        .card
+            position: relative
+            margin-bottom: calc(#{$minw} * 4)
+            padding: calc(#{$minw} * 4)
+            border: 1px solid $gray
+
+            h5,
+            p
+                position: relative
+                z-index: 1
+
+            &::before
+                position: absolute
+                top: 0
+                left: 0
+                z-index: 1
+                width: 100%
+                height: 100%
+                content: ''
+                background-color: $white
+
+            &::after
+                position: absolute
+                left: 18px
+                top: 20px
+                z-index: 0
+                content: ''
+                width: 100%
+                height: 100%
+                background-image: url(/src/dots-small.svg)
+
+.plus
+    display: none
+
+    @include mq(md)
+        position: relative
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        display: block
+        animation: fly 6s ease-in-out infinite
+
+@keyframes fly
+    50%
+        transform: translateX(-16px)
+
+.fab
+    display: inline-block
+    font:
+        style: normal
+        size: inherit
+    color: transparent
+    -webkit-background-clip: text
+    @include pagePalette(-25deg)
+
+    text-rendering: auto
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+.social-link
+    margin-bottom: calc(#{$minw} * 4)
+    
+    ul
+        display: flex
+        flex-flow: row wrap
+        width: 100%
+        justify-content: center
+        --w: 30px
+
+        li
+            a
+                position: relative
+                margin: 0.55em
+                display: block
+                font-size: 2.5rem
+                opacity: .6
+                transition: transform 0.6s cubic-bezier(0, 0.6, 0.35, 1.21), opacity 0.2s ease
+
+                span
+                    width: var(--w)
+
+                    svg
+                        width: inherit
+                        fill: var(--page-color)
+
+                    @media (min-width: $sx)
+                        --w: 36px
+                    
+                    @include mq(sm)
+                        --w: 42px
+
+                &::before
+                    content: attr(data-title)
+                    position: absolute
+                    left: 50%
+                    transform: translate(-50%, 50px)
+                    bottom: 0
+                    padding: calc(#{$minw} * 2)
+                    font-size: 1rem
+                    color: inherit
+
+                    opacity: 0
+                    visibility: hidden
+
+                    transition: transform 0.6s cubic-bezier(0, 0.31, 0.22, 1.25), opacity 0.2s ease
+                    will-change: transform
+                
+                &:hover
+                    transform: translateY(-10px)
+                    opacity: 1
+
+                    &::before
+                        transform: translate(-50%, 25px)
+                        opacity: 1
+                        visibility: visible

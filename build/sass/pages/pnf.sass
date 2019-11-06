@@ -1,0 +1,29 @@
+#wrapper
+    min-height: 100vh
+
+#main
+    display: flex
+    width: 100%
+    height: calc(100% - 72px)
+    justify-content: center
+    align-items: center
+    color: #a4a4a4
+    text-align: center
+
+.dialog
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+svg
+    max-width: 100%
+
+    &.arrow
+        position: absolute
+        top: -1.5em
+        left: 1.5em
+        z-index: -1
+        width: 150px
+        max-width: 40%
+        transform: rotate(-135deg)
