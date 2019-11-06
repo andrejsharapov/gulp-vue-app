@@ -1,0 +1,32 @@
+# andrejsharapov.github.io/
+# The humans responsible & technology colophon
+
+████──█──█──████───████──███────██
+█──█──██─█──█──██──█──█──█───────█
+████──█─██──█──██──████──███─────█
+█──█──█──█──█──██──█─█───█────█──█
+█──█──█──█──████───█─█───███──████
+
+███──█──█──████──████──████──████──████──█─█
+█────█──█──█──█──█──█──█──█──█──█──█──█──█─█
+███──████──████──████──████──████──█──█──█─█
+──█──█──█──█──█──█─█───█──█──█─────█──█──███
+███──█──█──█──█──█─█───█──█──█─────████───█
+
+## THE DEVELOPERS
+
+Site: https://andrejsharapov.github.io
+Twitter: https://twitter.com/andrejsharapov
+VKontakte: https://vk.com/andrejsharapov
+
+Location: Moscow, RUSSIA
+
+## HUMANS
+
+Andrej Sharapov: @andrejsharapov
+
+## SITE
+
+Standards: HTML5, CSS3, JavaScript
+Components: Vue.js, Anchor.js, Vue-dragscroll.js
+Software: Visual Studio Code, Pug, Sass, Gulp, Git
