@@ -1,0 +1,149 @@
+@import '_vars';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+
+    @include mq(sx) {
+        font-size: 95%;
+    }
+}
+
+body,
+figure,
+figcaption,
+blockquote,
+li,
+p {
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0.2rem;
+    margin-bottom: .5rem;
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:not([class]) {
+        text-decoration-skip-ink: auto;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+ul[class],
+ol[class] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.small,
+ small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+svg {
+    overflow: hidden;
+}
+
+s {
+    display: contents;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="search"],
+input[type="submit"],
+input[type="button"],
+textarea,
+button,
+select {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    line-height: inherit;
+    border: 0;
+    background-color: transparent;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+article > * + * {
+    margin-top: 1em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
