@@ -1,0 +1,170 @@
+{
+    "skills": {
+        "all": [
+            {
+                "image": "figma.svg",
+                "langName": "Figma"
+            },
+            {
+                "image": "corel.svg",
+                "langName": "CorelDRAW"
+            },
+            {
+                "image": "gwd.svg",
+                "langName": "Google Web Designer"
+            },
+            {
+                "image": "paint.png",
+                "langName": "Paint.NET"
+            },
+            {
+                "image": "gimp.svg",
+                "langName": "GIMP"
+            },
+            {
+                "image": "ps.svg",
+                "langName": "Adobe Photoshop"
+            },
+            {
+                "image": "ai.svg",
+                "langName": "Adobe Illustrator"
+            },
+            {
+                "image": "html5.svg",
+                "langName": "HTML5"
+            },
+            {
+                "image": "css3.svg",
+                "langName": "CSS3"
+            },
+            {
+                "image": "javascript.svg",
+                "langName": "JavaScript"
+            },
+            {
+                "image": "sass.svg",
+                "langName": "SASS / SCSS"
+            },
+            {
+                "image": "pug.svg",
+                "langName": "PugJS"
+            },
+            {
+                "image": "bootstrap.svg",
+                "langName": "Bootstrap"
+            },
+            {
+                "image": "jquery.svg",
+                "langName": "jQuery"
+            },
+            {
+                "image": "git.svg",
+                "langName": "Git"
+            },
+            {
+                "image": "node.svg",
+                "langName": "Node.js"
+            },
+            {
+                "image": "gulp.svg",
+                "langName": "Gulp"
+            },
+            {
+                "image": "vue.svg",
+                "langName": "Vue.js"
+            }
+        ],
+        "design": [
+            {
+                "image": "figma.svg",
+                "langName": "Figma"
+            },
+            {
+                "image": "corel.png",
+                "langName": "CorelDRAW"
+            },
+            {
+                "image": "gwd.svg",
+                "langName": "Google Web Designer"
+            },
+            {
+                "image": "paint.png",
+                "langName": "Paint.NET"
+            },
+            {
+                "image": "gimp.svg",
+                "langName": "GIMP"
+            },
+            {
+                "image": "ps.svg",
+                "langName": "Adobe Photoshop"
+            },
+            {
+                "image": "ai.svg",
+                "langName": "Adobe Illustrator"
+            }
+        ],
+        "coding": [
+            {
+                "image": "sass.svg",
+                "langName": "SASS / SCSS"
+            },
+            {
+                "image": "pug.svg",
+                "langName": "PugJS"
+            },
+            {
+                "image": "javascript.svg",
+                "langName": "JavaScript"
+            },
+            {
+                "image": "jquery.svg",
+                "langName": "jQuery"
+            },
+            {
+                "image": "vue.svg",
+                "langName": "Vue.js"
+            },
+            {
+                "image": "bootstrap.svg",
+                "langName": "Bootstrap"
+            },
+            {
+                "image": "git.svg",
+                "langName": "Git"
+            },
+            {
+                "image": "node.svg",
+                "langName": "Node.js"
+            },
+            {
+                "image": "gulp.svg",
+                "langName": "Gulp"
+            }
+        ],
+        "banners": [
+            {
+                "image": "gwd.svg",
+                "langName": "Google Web Designer"
+            },
+            {
+                "image": "paint.png",
+                "langName": "Paint.NET"
+            },
+            {
+                "image": "ps.svg",
+                "langName": "Adobe Photoshop"
+            },
+            {
+                "image": "ai.svg",
+                "langName": "Adobe Illustrator"
+            },
+            {
+                "image": "ae.svg",
+                "langName": "After Effects"
+            }
+        ]
+    }
+}
+    
+    

@@ -1,0 +1,25 @@
+[
+    {
+        "name": "Email",
+        "content": "an.sharapov90@gmail.com",
+        "add": "an.sharapov90@ya.ru"
+    },
+    {
+        "name": "Phone",
+        "content": "+7 (964) 788-27-38",
+        "add": "10:00-18:00 (GMT+3) Moscow"
+    },
+    {
+        "name": "Telegram",
+        "content": "@andrejsharapov"
+    },
+    {
+        "name": "Skype",
+        "content": "Andrej Sharapov",
+        "icon": "/src/live9c920983b0fe9b8e_1.jpeg"
+    },
+    {
+        "name": "Viber & WhatsApp",
+        "content": "+7 (929) 511-40-25"
+    }
+]

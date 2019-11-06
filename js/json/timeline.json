@@ -1,0 +1,131 @@
+[
+    {
+        "tag": "dev",
+        "date": "2019-07-10",
+        "title": "Vue.js",
+        "desc": "Я буду рассматривать сегодняшний день как отправную точку моего изучения Vue.js",
+        "linkText": "Подробнее",
+        "linkUrl": "//twitter.com/andrejsharapov/status/1148865778709663744"
+    },
+    {
+        "tag": "other",
+        "date": "2019-06-03",
+        "title": "Вклад в JSFiddle",
+        "desc": "Сегодня я внес свой вклад в разработку JSFiddle, где предложил идею, которая была одобрена и реализована.",
+        "linkText": "GitHub Issues",
+        "linkUrl": "//github.com/jsfiddle/jsfiddle-issues/issues/1463"
+    },
+    {
+        "tag": "figma",
+        "date": "2019-03-17",
+        "title": "Figma",
+        "desc": "Начал изучать Figma и создал первые шаблоны",
+        "linkText": "Работы",
+        "linkUrl": "//www.behance.net/andrejsharapov"
+    },
+    {
+        "tag": "codepen",
+        "date": "2019-01-18",
+        "title": "CodePen",
+        "desc": "Первая популярная ручка на портале CodePen",
+        "linkText": "CodePen",
+        "linkUrl": "//codepen.io/andrejsharapov/details/aPrNxP"
+    },
+    {
+        "tag": "dev",
+        "date": "2019-01-03",
+        "title": "Новый дизайн",
+        "desc": "Разработка нового дизайна для проекта «CSS Box-Shadows library»",
+        "linkText": "Сайт",
+        "linkUrl": "//madeas.github.io/box-shadows/"
+    },
+    
+    {
+        "tag": "behance",
+        "date": "2018-06-10",
+        "title": "Welcome to Behance",
+        "desc": "Начал размещать проекты на Behance",
+        "linkText": "See profile",
+        "linkUrl": "//www.behance.net/andrejsharapov"
+    },
+    {
+        "tag": "dev",
+        "date": "2018-05-24",
+        "title": "Публичный релиз «CSS Box-Shadows library»",
+        "desc": "Для этого мне пришлось начать учиться работать с: VSCode, Node.js, Git, Gulp и NPM.",
+        "linkText": "",
+        "linkUrl": ""
+    },
+    {
+        "tag": "dribbble",
+        "date": "2018-04-20",
+        "title": "Hello, Dribbble!",
+        "desc": "Получил приглашение на Dribbble",
+        "linkText": "Профиль",
+        "linkUrl": "//dribbble.com/andrejsharapov"
+    },
+    {
+        "tag": "idea",
+        "date": "2018-04-18",
+        "title": "Разработка «CSS Box-Shadows library»",
+        "desc": "Кроссбраузерная коллекция CSS box-shadow",
+        "linkText": "Сайт",
+        "linkUrl": "//madeas.github.io/box-shadows/"
+    },
+    {
+        "tag": "career",
+        "date": "2018-02-27",
+        "title": "Выбор профессии",
+        "desc": "Устроился на работу и начал профессиональную карьеру в качестве веб-дизайнера.",
+        "linkText": "",
+        "linkUrl": ""
+    },
+    {
+        "tag": "dev",
+        "date": "2017-10-16",
+        "title": "HTML5 banners",
+        "desc": "В октябре 2017 года начал работать с Google Web Designer и разрабатывать html5-баннеры.",
+        "linkText": "",
+        "linkUrl": ""
+    },
+    {
+        "tag": "WordPress",
+        "date": "2016-06-12",
+        "title": "Знакомство с WordPress",
+        "desc": "Начал работать с WordPress и создал сайт-портфолио с блогом.",
+        "linkText": "Блог",
+        "linkUrl": "//madeas.ru/blog/"
+    },
+    {
+        "tag": "progress",
+        "date": "2016-05-30",
+        "title": "Best on uCoz",
+        "desc": "Сайт студии входит в список лучших сайтов системы uCoz по версии «Best on uCoz».",
+        "linkText": "beston.ucoz.ru",
+        "linkUrl": "//beston.ucoz.ru/"
+    },
+    {
+        "tag": "progress",
+        "date": "2016-05-23",
+        "title": "TOP 100 uCoz",
+        "desc": "Сайт студии входит в десятку лучших в системе uCoz.",
+        "linkText": "top.ucoz.ru",
+        "linkUrl": "//top.ucoz.ru/search?t=madeas&o=2&x=0&y=0"
+    },
+    {
+        "tag": "idea",
+        "date": "2016-02-14",
+        "title": "Креативное агентство",
+        "desc": "Организовал веб-студию волонтеров и начинающих веб-дизайнеров / разработчиков на платформе uCoz. Creative Agency \"Madeas Studio\"",
+        "linkText": "",
+        "linkUrl": ""
+    },
+    {
+        "tag": "dev",
+        "date": "2010-03-18",
+        "title": "Photoshop",
+        "desc": "Начал изучать Adobe Photoshop и разрабатывать дизайн для групп ВКонтакте",
+        "linkText": "",
+        "linkUrl": ""
+    }
+]

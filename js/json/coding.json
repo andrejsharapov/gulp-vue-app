@@ -1,0 +1,186 @@
+[
+    {
+        "projectName": "Landing page",
+        "src": "GRRJxJp",
+        "ifTtitle": "backdrop-filter: blur & scroll-behavior: smooth",
+        "screen": "dfcf9199-644d-4716-8eca-89765a237bbd",
+        "software": [
+            "Pug",
+            "Stylus"
+        ],
+        "resources": [
+            "jquery.js",
+            "slick.js"
+        ],
+        "date": "OCTOBER 09, 2019",
+        "desc": "Прокрутка landing page при помощи CSS свойства \"scroll-behavior\" и липким заголовком.",
+        "alert": {
+            "warning": "Некоторые свойства поддерживается не всеми браузерами."
+        },
+        "about": [
+            "backdrop-filter",
+            "scroll-behavior",
+            "transform",
+            "display: grid"
+        ]
+    },
+    {
+        "projectName": "Whole UI without javascript",
+        "src": "OqvXyb",
+        "title": "Whole UI without javascript | on pure css",
+        "screen": "08dd6c33-efa6-42e7-9379-598fbfabe425",
+        "standard": [
+            "SCSS"
+        ],
+        "software": [
+            "Pug"
+        ],
+        "date": "MARCH 15, 2019",
+        "desc": "Страница без JavaScript: <ul class='dots'><li>parallax scrolling;</li><li>simple animation of links and buttons with the css-property cubic-bezier;</li><li>smooth scrolling when click on the navigation;</li><li>animation of the hamburger click;</li><li>open/close the click menu etc.</li></ul>",
+        "alert":{
+            "warning": "Рекомендуется для просмотра Firefox браузер!"
+        },
+        "about": [
+            "perspective",
+            "scroll-snap-type",
+            "-webkit-background-clip: text",
+            "display: grid",
+            "cubic-bezier",
+            "transform",
+            "writing-mode"
+        ]
+    },
+    {
+        "projectName": "Parallax Scrolling",
+        "src": "joZzEV",
+        "screen": "cea11710-7603-47d8-b47d-4c5e2f3921bc",
+        "ifTitle": "CSS mix-blend-mode & Awesome Parallax Scrolling",
+        "standard": [
+            "SCSS",
+            "JavaScript"
+        ],
+        "software": [
+            "Pug",
+            "babel"
+        ],
+        "resources": [
+            "jQuery.js"
+        ],
+        "date": "JANUARY 17, 2019",
+        "desc": "Параллакс-скроллинг на jQuery и CSS свойство 'mix-blend-mode', создающее увидительный эффект экрану приветствия.",
+        "about": [
+            "mix-blend-mode",
+            "js - Mousemove"
+        ]
+    },
+    {
+        "projectName": "CSS Device Creator",
+        "src": "MLwBOY",
+        "title": "CSS Device Creator | Samsung, Apple, etc.",
+        "screen": "8e846bf8-ff1d-4b72-866b-c03dcc203b97",
+        "standard": [            
+            "HTML",
+            "SCSS",
+            "JavaScript"
+        ],
+        "software": [
+            "Pug"
+        ],
+        "resources": [
+            "jQuery.js",
+            "jQuery-ui.js",
+            "bootstrap",
+            "typed.js"
+        ],
+        "date": "JANUARY 24, 2019",
+        "desc": null,
+        "about": [
+            "display: flex",
+            "clip-path",
+            "@keyframes",
+            "transform"
+        ]
+    },
+    {
+        "projectName": "Animated SVG radio buttons",
+        "src": "WmQMMm",
+        "ifTitle": "Animated SVG radio buttons",
+        "screen": "ca5d5050-f432-47e6-8a04-f2d40de4ee5c",
+        "standard": [
+            "SCSS"
+        ],
+        "software": [
+            "Pug"
+        ],
+        "date": "FEBRUARY 28, 2019",
+        "desc": "Стилизация и эффекты радиокнопок при помощи SVG и CSS.",
+        "about": [
+            "svg",
+            "transform",
+            "-webkit-background-clip: text",
+            "-webkit-text-fill-color",
+            "cubic-bezier"
+        ]
+    },
+    {
+        "projectName": "Turned business card on CSS",
+        "src": "yrOZvY",
+        "ifTitle": "Turned business card on CSS",
+        "screen": "f577fd95-56a8-43bf-98cd-c41e67f76c25",
+        "standard": [
+            "SCSS"
+        ],
+        "software": [
+            "Pug"
+        ],
+        "date": "APRIL 05, 2019",
+        "desc": "Эффект наведения, меняющий угол наклона карточки, при помощи одного лишь CSS свойства. Если нажать на карту, можно увидеть ее обратную сторону.",
+        "about": [
+            "display: grid",
+            "perspective",
+            "transform",
+            "cubic-bezier"
+        ]
+    },
+    {
+        "title": "Collection CSS linear-gradients in 2019",
+        "projectName": "CSS linear-gradients",
+        "src": "gEwEJz",
+        "screen": "33b254eb-7dff-4358-b14e-e2d9284780d4",
+        "standard": [
+            "SCSS",
+            "JavaScript"
+        ],
+        "software": [
+            "Pug"
+        ],
+        "date": "MARCH 05, 2019",
+        "desc": "Коллекция линейных градиентов на 2019 год. Функционал позволяет выбрать понравившийся градиент и в один клик скопировать его код.",
+        "about": [
+            "display: flex",
+            "cubic-bezier",
+            "will-change",
+            "content: attr()"
+        ]
+    },
+    {
+        "projectName": "Page 404 on CSS",
+        "src": "aXpqQB",
+        "title": "Creative animated error page 404 / Only CSS",
+        "screen": "13f6cd45-7034-4623-8062-e3386e81a2d2",
+        "standard": [
+            "SCSS"
+        ],
+        "software": [
+            "Pug"
+        ],
+        "date": "JANUARY 31, 2019",
+        "desc": "Анимированная страница 404 ошибки, выполненная при помощи CSS свойств.",
+        "about": [
+            "@keyframes",
+            "clip-path",
+            "display: flex",
+            "transform"
+        ]
+    }
+]
