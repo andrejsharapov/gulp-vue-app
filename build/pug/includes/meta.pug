@@ -1,0 +1,75 @@
+meta(name="application-name" content= appName)
+
+meta(property="og:title"        content= siteName + ' — ' + pageTitle)
+meta(property="og:description"  content= pageDesc)
+meta(property="og:site_name"    content= siteName)
+meta(property="og:url"          content= siteUrl + headId)
+meta(property="og:image"        content=siteUrl + "src/share.png")
+meta(property="og:locale"       content= locale)
+meta(property="og:type"         content="website")
+
+meta(name="twitter:card"        content="summary_large_image")
+meta(name="twitter:title"       content= siteName + ' — ' + pageTitle)
+meta(name="twitter:description" content= pageDesc)
+meta(name="twitter:url"         content= siteUrl + headId)
+meta(name="twitter:site"        content='@andrejsharapov')
+meta(name="twitter:creator"     content="@andrejsharapov")
+meta(name="twitter:image:src"   content=siteUrl + "src/share.png")
+link(rel="image_src"            href=siteUrl + "src/share.png")
+
+meta(name="yandex-verification" content="a890149c90e4e57f")
+block postmeta
+
+script(type="application/ld+json").
+    [
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "@id": "#{siteUrl}#person",
+            "name": "#{siteName}",
+            "alternateName": "Андрей Шарапов",
+            "jobTitle": "Web-designer, Full stack / Frontend developer",
+            "email": "an.sharapov90@gmail.com",
+            "sameAs": [
+                "https://github.com/madeas/",
+                "https://twitter.com/andrejsharapov/",
+                "https://dribbble.com/andrejsharapov/",
+                "https://www.behance.net/andrejsharapov/",
+                "https://vk.com/andrejsharapov/",
+                "https://medium.com/@andrejsharapov/",
+                "https://codepen.io/andrejsharapov/",
+                "https://www.instagram.com/andrej.sharapov/"
+            ],
+            "gender": "Male",
+            "url": "#{siteUrl}",
+            "image": "#{siteUrl}src/share.png",
+            "birthPlace": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Moscow",
+                    "addressCountry": "Russia"
+                }
+            },
+            "nationality": "Russian"
+        },
+        {
+            "@context": "https://schema.org/",
+            "@type": "WebSite",
+            "@id":"#website",
+            "name": "#{siteName}",
+            "alternateName": "Andrej Sharapov",
+            "url": "#{siteUrl}",
+            "image": "#{siteUrl}src/share.png",
+            "description": "Web-designer, Full stack / Frontend developer"
+        }
+    ]
+
+<!-- Google Tag Manager -->
+script.
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PMFQB7Z');
+<!-- End Google Tag Manager -->
