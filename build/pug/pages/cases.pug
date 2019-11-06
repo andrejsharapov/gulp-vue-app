@@ -1,0 +1,51 @@
+extends ../template
+
+block vars
+    - pageTitle = 'Кейсы'
+    - headId = 'cases'
+    - pageDesc = 'Кейсы: портфолио по веб-дизайну, разработке сайтов и html5 баннеров.'
+    - leadText = 'Кейсы: портфолио по веб-дизайну, разработке сайтов и html5 баннеров'
+    - pageName = pageTitle
+    - anchor = true
+
+block prepend title
+    | #{ pageTitle } &mdash; 
+
+block pageStyles
+    link(rel="stylesheet" href="/css/cases.min.css")
+
+block header
+    .bgpage
+    
+block content
+    section
+        h2.heading-content Примеры 
+            span работ
+            
+        p Я знаю, что многие клиенты, прежде чем сделать выбор, хотят увидеть реальные кейсы по веб-разработке, то есть «живые» сайты. Это логично. Поэтому на этой странице я представил часть своих работ, выполненных в разное время.
+    
+        #counters
+            site-counters(:count="count")
+
+        p Глядя на них, вы можете увидеть мой профессиональный рост и навыки, которыми я обладаю. Узнайте, соответствуют ли они вашим требованиям, прежде чем вы решите разместить заказ.
+
+        #works
+            projects-list(:caselist="caselist", :selected="selected" @select="selected = $event")
+            projects-selected(v-if="selected", :cd="selected" @close="selected = null")
+        
+        p.alert.success Вы можете посмотреть весь список услуг, а также самостоятельно 
+            a(href="/pricing#расчет-стоимости-услуг", target="_blank", rel="noopener noreferrer") рассчитать их стоимость 
+            | на сайте в прайс-листе.
+
+        .text-center
+            h5 Понравились работы? Расскажите о них друзьям
+            .ya-share2(data-services="vkontakte,facebook,twitter,linkedin,tumblr,viber,whatsapp,skype,telegram" data-size="m")
+            
+block anchorOpt
+    script.
+        anchors.add('h2')
+
+block pageJs
+    script(src="/js/cases.min.js")
+    script(src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js")
+    script(src="//yastatic.net/share2/share.js")

@@ -1,0 +1,32 @@
+extends ../template
+
+block vars
+    - pageTitle = 'Timeline'
+    - headId = 'timeline'
+    - pageDesc = 'Временная линия профессиональных достижений и значимых событий.'
+    - leadText = 'График профессиональных достижений и значимых событий'
+    - pageName = pageTitle
+
+block prepend title
+    | #{ pageTitle } &mdash; 
+
+block pageStyles
+    link(rel="stylesheet" href="/css/timeline.min.css")
+
+block header
+    .bgpage
+
+block content
+    section#content
+        h2.heading-content Timeline 
+            span 
+                img(src="/src/hearts.svg" loading='lazy' alt="")
+        p Ниже вы можете увидеть ленту моих профессиональных достижений и наиболее значимых для меня событий. Я надеюсь, что это побудит вас следовать своим мечтам и записывать свои достижения на этом пути!
+            .timeline
+                site-timeline(:timeline="timeline")
+                
+    section#footimage
+        img(src="/src/confetti-2.svg" loading='lazy' alt="")
+
+block pageJs
+    script(src="/js/timeline.min.js")

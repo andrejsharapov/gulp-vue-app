@@ -1,0 +1,53 @@
+extends ../template
+
+block vars
+    - pageTitle = 'Coding'
+    - headId = 'coding'
+    - pageDesc = 'Примеры успешных работ, демонстрирующие качество написанного кода.'
+    - leadText = 'Примеры работ и качество кода'
+    - pageName = pageTitle
+
+block prepend title
+    | #{ pageTitle } &mdash; 
+
+block pageStyles
+    link(rel="stylesheet" href="/css/coding.min.css")
+
+block header
+    .bgpage
+
+block content
+    section
+        h2.heading-content Инструментарий
+        p В своей работе я использую различный сотф, облегачающий разработку и языки программирования, такие как:
+        ul.dots
+            li CSS3 & препроцессор SASS (SCSS)
+            li HTML5 & шаблонизатор Pug
+            li JavaScript
+            li jQuery & Vue.js
+        p ...и другие различные фреймворки, библиотеки и технологии, связанные с ними.
+        
+        #skill-list
+            .skill-list
+                site-skill-list(:skills="skills" v-dragscroll.x="true") 
+               
+    section
+        h2.heading-content Примеры 
+            span работ
+
+        p Ниже я представил некоторые из своих работ, чтобы посетители и, возможно, будущие клиенты, могли посмотреть на качество написанного мною кода и оценить мои возможности, на соответствие необходимым требованиям.
+
+        #works
+            projects-list(:codelist="codelist", :selected="selected" @select="selected = $event")
+
+            .alert.success Эти и другие работы вы можете посмотреть 
+                a(href="//codepen.io/andrejsharapov", target="_blank", rel="noopener noreferrer") в моем профиле 
+                | на сайте CodePen.io
+    projects-selected(v-if="selected", :cd="selected" @close="selected = null")
+
+block anchorOpt
+    script.
+        anchors.add('h2')
+
+block pageJs
+    script(src="/js/coding.min.js")

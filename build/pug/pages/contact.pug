@@ -1,0 +1,30 @@
+extends ../template
+
+block vars
+    - pageTitle = 'Контакты'
+    - headId = 'contact'
+    - pageDesc = 'Контактные данные, социальные аккаунт и другие средства связи.'
+    - leadText = 'Всегда на связи, в удобное для вас время!'
+    - pageName = pageTitle
+
+block prepend title
+    | #{ pageTitle } &mdash; 
+
+block pageStyles
+    link(rel="stylesheet" href="/css/contact.min.css")
+
+block header
+    .bgpage
+
+block content
+    section#soc-links
+        h2.heading-content Напишите 
+            span мне ↓
+        site-social-links
+
+    section#contact-info
+        p Вы можете связаться со мной в одной из социальных сетей или другие контакты.
+        site-contact-info
+
+block pageJs
+    script(src="/js/contact.min.js")

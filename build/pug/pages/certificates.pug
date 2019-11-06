@@ -1,0 +1,36 @@
+extends ../template
+
+block vars
+    - pageTitle = 'Электронные сертификаты'
+    - headId = 'certificates'
+    - pageDesc = 'Пройденные курсы и тесты на образовательном IT портале - GeekBrains / GeekUniversity'
+    - leadText = 'Курсы и тесты на образовательном IT портале - GeekBrains / GeekUniversity'
+    - pageName = pageTitle
+    - anchor = true
+
+block prepend title
+    | #{ pageTitle } &mdash; 
+
+block pageStyles
+    link(rel="stylesheet" href="/css/cert.min.css")
+
+block header
+    .bgpage
+
+block content
+    section#content
+        p Я изучал эту обширную и быстро растущую индустрию веб-разработки сравнительно недавно, и, каждый день для меня начинается с открытия чего-то нового. Таким образом, я улучшаю свои профессиональные навыки и качество выполняемых мною проектов.
+        p За время моей работы и обучения, я прошел несколько тестов и онлайн-курсов по веб-разработке, дизайну и продвижению, по результатам которых, я получил сертификаты, с которыми вы можете ознакомиться ниже.
+        #cert-container
+            site-certificates(:cert="cert" @select="selected = $event")
+        selected-certificates(v-if="selected", :f="selected" @close="selected = null")
+            
+    section#footimage
+        img(src="/src/confetti-2.svg" loading='lazy' alt="")
+
+block pageJs
+    script(src="/js/cert.min.js")
+
+block anchorOpt
+    script.
+        anchors.add('h3');

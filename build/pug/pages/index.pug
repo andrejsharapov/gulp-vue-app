@@ -1,0 +1,120 @@
+extends ../template
+
+block vars
+    - pageTitle = 'веб-дизайнер, фронтенд разработчик'
+    - headId = ''
+    - pageDesc = 'Open Source Web developer Portfolio on GitHub | ' + appName + ' — Web Designer, Frontend Developer'
+    - pageName = siteName
+    - anchor = true
+
+block append title
+    |  &mdash; веб-дизайнер, фронтенд разработчик 
+
+block postmeta
+    meta(name="google-site-verification" content="zaHq_aXtLWenj9ImfGu_gFj0mmJlC1Prot8KOlYFGzY")
+
+block pageStyles
+    link(rel="stylesheet" href="/css/home.min.css")
+
+block leadText
+    p.lead
+        span Frontend Developer
+        span Ui/Ux Designer
+        span Full-Stack Developer
+
+block header
+    .bgpage
+    span.git-btn
+        a.github-button(href="https://github.com/andrejsharapov/andrejsharapov.github.io" data-icon="octicon-star" data-show-count="true" rel="noopener noreferrer" aria-label="Star andrejsharapov/andrejsharapov.github.io on GitHub") Star
+        //- a.github-button(href="https://github.com/users/andrejsharapov/sponsorship" data-icon="octicon-heart" data-size="large" aria-label="Sponsor @andrejsharapov on GitHub") Sponsor
+        a.github-button(href="https://github.com/andrejsharapov/andrejsharapov.github.io/issues" data-icon="octicon-issue-opened" data-show-count="true" aria-label="Issue andrejsharapov/andrejsharapov.github.io on GitHub") Issue
+        a.github-button(href="https://github.com/andrejsharapov/andrejsharapov.github.io/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork andrejsharapov/andrejsharapov.github.io on GitHub") Fork
+        
+block content
+    section#about
+        .dots-large
+        h2.heading-content About 
+            span me
+        p Привет! Меня зовут #{ siteName }. Я 
+            strong Веб-дизайнер 
+            | & 
+            strong Фронтенд разработчик. 
+            | Около 
+            strong 3-х лет 
+            | я занимаюсь созданием дизайна, программированием и версткой сайтов на различных CMS и без них.
+        p Мне нравится создавать что-то новое, искать интересные решения, делать невозможное при помощи простого css и воплощать свои идеи и идеи клиентов в виде сайта.
+        p.lead Интересно? Тогда идем дальше.
+        .flex
+            picture#person.image
+                source(type="image/webp" srcset="/src/me.webp")
+                source(type="image/jpeg" srcset="/src/me.jpg")
+                img(src="/src/me.jpg" loading='lazy' alt= siteName)
+            div
+                p Я слежу за тенденциями в веб-дизайне и совершенствую свои навыки:
+                ul.dots
+                    each dot in ['изучаю новые программы и языки;', 'изучаю тренды UX / UI дизайна;', 'читаю документации и веду <a href="https://madeas.ru/blog/" target="_blank" rel="noopener noreferrer">блог</a>;', 'анализирую работы разработчиков;']
+                        li!= dot
+                p Недавно я перешел из Adobe Photoshop и начал изучать Figma, в которой теперь занимаюсь прототипированием сайтов.
+        
+        #skill-list
+            .skill-list
+                site-skill-list(:skills="skills")
+
+    section#skills
+        h2.heading-content Skill 
+            span list
+        .skill-grid-template
+            #about-me
+                p Я всегда ищу интересные решения, для выполнения поставленных задач.
+                ul.dots
+                    each dot in ['имею знания и опыт, необходимые для разработки практичного, качественного и функционального веб-сайта;','понимание принципов маркетинга и SEO, позволяет мне в полной мере заниматься продвижением и поддержкой проектов.']
+                        li= dot
+            #progress
+                skill-progress-bars(v-for="n in bars" v-bind="n")
+
+    section#portfolio
+        h2.heading-content My 
+            span Portfolio
+        p За время моей работы, мною успешно выполнено около 50 проектов по разработке сайтов и более 300 фриланс-заказов различной сложности; от рефакторинга и внесения правок, до разработки логотипов и корпоративных сайтов.
+        ul.dots
+            each dot in ['<strong>фреймворки:</strong> Bootstrap 4, Vue.js;','<strong>библиотеки:</strong> jQuery;','<strong>препроцессоры:</strong> SASS / SCSS / Stylus;','<strong>шаблонизаторы:</strong> Pug / HAML;']
+                li!= dot
+        p Я владею методами верстки на Grid и Flexbox, знаком со стандартами семантической разметки: schema и open graph; и другими современными веб-технологиями и ПО.
+        
+        #counters
+            site-counters(:count="count")
+        p Посмотрите некоторые из моих работ в портфолио.
+        
+        projects-list(:caselist="caselist")
+
+        p.text-right
+            a.launch.launch-right(href="/cases" title="Cases")
+                span.launch-label Кейсы
+
+    section#certs
+        h2.heading-content Electronic 
+            span Certificates
+        p Чтобы проверить и подтвердить свои навыки, я прошел несколько тестов и онлайн-курсов по веб-разработке, дизайну и продвижению. В результе прохождения, я получил электронные сертификаты, с которыми вы легко можете ознакомиться на страничке.
+        p Ниже я представил последние из пройденных курсов и тестов в различных областях.
+        site-cert-preview(:cert="cert")
+        p.text-right
+            a.launch.launch-right(href="/certificates" title="More")
+                span.launch-label Другие
+
+    section#timeline
+        .dots-large
+        h2.heading-content Timeline
+        p Поскольку я начал изучать эту обширную и быстро растущую индустрию сравнительно недавно, каждый день для меня начинается с открытия чего-то нового. Таким образом, я улучшаю свои профессиональные навыки и качество выполненных мною проектов.
+        p Ниже вы можете увидеть ленту моих профессиональных достижений и наиболее важных для меня событий.
+        site-timeline(:timeline="timeline")
+        p.text-right
+            a.launch.launch-right(href="/timeline" title="More")
+                span.launch-label Больше событий
+
+block anchorOpt
+    script.
+        anchors.add('h2');
+
+block pageJs
+    script(src="/js/home.min.js")
+    script(src="//buttons.github.io/buttons.js")
