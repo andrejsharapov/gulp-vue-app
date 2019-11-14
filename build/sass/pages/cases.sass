@@ -268,7 +268,7 @@
 
     &-title
         position: absolute
-        top: -1.75em
+        top: -2.15em
         left: 0
         padding-right: calc(#{$minw} * 2)
         padding-left: calc(#{$minw} * 2)
@@ -379,6 +379,7 @@
             &-colors
                 display: grid
                 grid-gap: calc(#{$minw} * 4)
+                align-items: start
 
                 @include mq(md)
                     grid-template-columns: repeat(4, 1fr)
@@ -431,6 +432,13 @@
             &-hex
                 padding-right: calc(#{$minw} * 2)
                 color: $darkgray
+                
+                &_add
+                    display: block
+
+                    @include mq(sm)
+                        display: inline-block
+                        margin-left: 2em
     
     &-typography
         .t-content
