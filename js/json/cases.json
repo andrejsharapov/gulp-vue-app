@@ -1,6 +1,111 @@
 [
     {
         "projectName": "Дизайн сайта",
+        "img": "//cdn.dribbble.com/users/2241643/screenshots/8194467/media/432d5d07762b79b3f6b40dcc6d2beb99.png",
+        "to": "Pet Project / Experience",
+        "cms": "",
+        "task": [
+            {
+                "taskName": "Разработка дизайна главной страницы «SK DESIGN».",
+                "list": []
+            }
+        ],
+        "logoWEBP": "",
+        "logoJPG": "",
+        "siteURL": "//www.behance.net/gallery/88087237/SK-DESIGN-factory-of-modern-furniture-for-the-home",
+        "siteName": "www.behance.net",
+        "date": "Ноябрь 2019",
+        "type": "Прототипирование",
+        "devs": [
+            {
+                "title": "Design",
+                "tags": [
+                    "Figma",
+                    "Adobe Photoshop"
+                ]
+            }
+        ],
+        "role": [
+            {
+                "my": [
+                    "Web Designer",
+                    "Ux/Ui Designer / Visual Designer"
+                ]
+            }
+        ],
+        "client": "«SK Design» - фабрика домашней мебели, которая сама проектирует, изготавливает и реализует продажу мебели, постоянно совершенствует и обновляет ассортимент.",
+        "issues": "",
+        "prev": [
+            {
+                "src": "B40T9FnA8dk",
+                "height": "590"
+            }
+        ],
+        "done": [
+            "планирование продукта и разработка идейной составляющей;",
+            "разработка прототипов дизайн-макета в Figma;",
+            "разработка Style Guide: формирование палитры цветов, типографики и состояний элементов;",
+            "разработка дизайна и пользовательского интерфейса (UI);",
+            "написание оригинальных текстов;"
+        ],
+        "colors": [
+            {
+                "name": "Основной цвет",
+                "color": "131129"
+            },
+            {
+                "name": "Вторичный цвет",
+                "color": "999999",
+                "coltwo": "F8F8FA"
+            },
+            {
+                "name": "Акцентирующий цвет",
+                "color": "FCAA3C",
+                "coltwo": "665349"
+            },
+            {
+                "name": "Фоновые цвета",
+                "color": "E5E5E5",
+                "coltwo": "F8F8FA"
+            }
+        ],
+        "typography": [
+            {
+                "fonts": "<link href='https://fonts.googleapis.com/css?family=Krona+One|Roboto&display=swap' rel='stylesheet'>",
+                "glob": "Krona One",
+                "text": "Roboto"
+            }
+        ],
+        "webdev": false,
+        "analytics": [
+            {
+                "result": "",
+                "img": ""
+            }
+        ],
+        "responsive": [
+            {
+                "percent": "0",
+                "dash": "0 100"
+            }
+        ],
+        "deadline": "На страницы потребовалось около 9 часов.",
+        "tms": false,
+        "testimonials": [
+            {
+                "img": "", 
+                "author": [
+                    {
+                        "name": "",
+                        "position": "",
+                        "text": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "projectName": "Дизайн сайта",
         "img": "//cdn.dribbble.com/users/2241643/screenshots/7971597/media/6f96fc0f8fac7cb3ed9f523339630722.png",
         "to": "Pet Project / Experience",
         "cms": "",
@@ -9,7 +114,7 @@
                 "taskName": "Разработка дизайна лендинга «Forest-Fi».",
                 "list": [
                     "мотивация и привлечение ЦА к идее и компании;",
-                    "конвертация ЦА в потенциальных клиентов;"
+                    "конвертирование ЦА в потенциальных клиентов;"
                 ]
             }
         ],
@@ -56,12 +161,13 @@
         "colors": [
             {
                 "name": "Основной цвет",
-                "color": "393939"
+                "color": "31282F",
+                "coltwo": "393939"
             },
             {
                 "name": "Вторичный цвет",
-                "color": "31282F",
-                "coltwo": "999999"
+                "color": "999999",
+                "coltwo": "DFDEDE"
             },
             {
                 "name": "Акцентирующий цвет",
@@ -70,14 +176,14 @@
             {
                 "name": "Фоновые цвета",
                 "color": "E3D1C0",
-                "coltwo": "fff"
+                "coltwo": "FFFFFF"
             }
         ],
         "typography": [
             {
-                "fonts": "<link href='https://fonts.googleapis.com/css?family=Fira+Sans|Montserrat:400,500,700&display=swap' rel='stylesheet'>",
-                "glob": "Fira Sans",
-                "text": "Montserrat"
+                "fonts": "<link href='https://fonts.googleapis.com/css?family=Fira+Sans|Raleway:400,500,700&display=swap' rel='stylesheet'>",
+                "glob": "Raleway",
+                "text": "Fira Sans"
             }
         ],
         "webdev": false,
@@ -115,7 +221,7 @@
         "cms": "",
         "task": [
             {
-                "taskName": "Разработка дизайна и юзабилити мобильного приложения.",
+                "taskName": "Разработка дизайна и юзабилити новогоднего приложения с возможностью заказа понравившихся товаров..",
                 "list": ""
             }
         ],
@@ -153,7 +259,7 @@
                 ]
             }
         ],
-        "client": "",
+        "client": "Заказчик - фантазия разработчика. Основная идея - придумать приложение с возможностью заказа понравившихся товаров. Я выбрал новогоднюю тематику.<hr>Данное приложение позволяет просматривать каталог и оформлять онлайн покупки на периодически обновляемый новогодний контент.<div class='alert info'>К сожалению представленное видео на полное и длится всего 1 минуту.",
         "issues": "",
         "prev": [
             {
@@ -261,6 +367,7 @@
             }
         ],
         "done": [
+            "планирование продукта и разработка идейной составляющей;",
             "анализ целевой аудитории и сайтов конкурентов;",
             "разработка Style Guide: формирование палитры цветов, типографики и состояний элементов;",
             "разработка логотипа;",
@@ -286,7 +393,7 @@
             },
             {
                 "name": "Фоновые цвета",
-                "color": "ffffff",
+                "color": "FFFFFF",
                 "coltwo": "24292E"
             }
         ],
@@ -416,8 +523,8 @@
             },
             {
                 "name": "Фоновые цвета",
-                "color": "ffffff",
-                "coltwo": "ebf7ff"
+                "color": "FFFFFF",
+                "coltwo": "EBF7FF"
             }
         ],
         "typography": [
@@ -566,8 +673,8 @@
             },
             {
                 "name": "Фоновые цвета",
-                "color": "f3f5f9",
-                "coltwo": "ffffff"
+                "color": "F3F5F9",
+                "coltwo": "FFFFFF"
             }
         ],
         "typography": [
@@ -662,10 +769,11 @@
             }
         ],
         "client": "ООО «РПН СФЕРА» — это аккредитованный орган по сертификации и декларированию продукции, который работает не только по всей России, но и по всему миру.",
+        "issues": "",
         "prev": [
             {
-                "src": "BxjxPsChxIh",
-                "height": "610"
+                "src": "B4N_jzLgSJN",
+                "height": "590"
             }
         ],
         "done": [
@@ -691,13 +799,13 @@
             },
             {
                 "name": "Акцентирующий цвет",
-                "color": "008fd1",
+                "color": "008FD1",
                 "coltwo": "FFC107"
             },
             {
                 "name": "Фоновые цвета",
-                "color": "f4f4f4",
-                "coltwo": "fff"
+                "color": "F4F4F4",
+                "coltwo": "FFFFFF"
             }
         ],
         "typography": [
@@ -815,7 +923,7 @@
         "colors": [
             {
                 "name": "Основной цвет",
-                "color": "ffffff"
+                "color": "FFFFFF"
             },
             {
                 "name": "Вторичный цвет",
@@ -973,8 +1081,8 @@
             },
             {
                 "name": "Фоновые цвета",
-                "color": "ece6f1",
-                "coltwo": "fff"
+                "color": "ECE6F1",
+                "coltwo": "FFFFFF"
             }
         ],
         "typography": [
@@ -998,121 +1106,6 @@
             }
         ],
         "deadline": "На выполнение поставленной задачи было затрачено около 20 дней.",
-        "tms": false,
-        "testimonials": [
-            {
-                "img": "",
-                "author": [
-                    {
-                        "name": "",
-                        "position": "",
-                        "text": ""
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "projectName": "Дизайн и верстка",
-        "img": "//mir-s3-cdn-cf.behance.net/project_modules/fs/e5aa0172838157.5bf52aa2dfa8a.png",
-        "to": "Corporate / Branding",
-        "cms": "",
-        "task": [
-            {
-                "taskName": "Разработка промо-сайта с целью привлечения новых клиентов к студии и конвертация лидов в заказчиков.",
-                "list": ""
-            }
-        ],
-        "logoWEBP": "",
-        "logoJPG": "",
-        "siteURL": "//www.behance.net/gallery/72838157/promo-stranichka-detskie-prazdniki",
-        "siteName": "www.behance.net",
-        "date": "Октябрь 2018",
-        "type": "Промо-сайт",
-        "devs": [
-            {
-                "title": "Standarts",
-                "tags": [
-                    "HTML5",
-                    "CSS3",
-                    "JavaScript"
-                ]
-            },
-            {
-                "title": "Software",
-                "tags": [
-                    "Visual Studio Code",
-                    "Pug",
-                    "SASS/SCSS"
-                ]
-            }
-        ],
-        "role": [
-            {
-                "my": [
-                    "Web Designer",
-                    "Ux/Ui Designer / Visual Designer",
-                    "Frontend Developer / Full-Stack Developer"
-                ]
-            }
-        ],
-        "client": "Кулинарная студия Юлии Высоцкой — это место, где люди, испытывающие страсть к еде, могут встретиться, поделиться опытом, обменяться интересными рецептами, да и просто пообщаться.",
-        "prev": [
-            {
-                "src": "Bqb9V_sHRye",
-                "height": "515"
-            }
-        ],
-        "done": [
-            "разработка прототипов дизайн-макета;",
-            "разработка концепции контент-наполнения сайта;",
-            "разработка дизайна и пользовательского интерфейса (UI);",
-            "верстка и наполнение сайта сформированным контентом;",
-            "анализ корректного отображения сайта в разных браузерах;",
-            "анализ корректного отображения сайта на современных мобильных устройствах;",
-            "запуск и тестирование сайта."
-        ],
-        "colors": [
-            {
-                "name": "Основной цвет",
-                "color": "2b2b2b"
-            },
-            {
-                "name": "Вторичный цвет",
-                "color": "079a55"
-            },
-            {
-                "name": "Акцентирующий цвет",
-                "color": "08b457",
-                "coltwo": "f00"
-            },
-            {
-                "name": "Фоновые цвета",
-                "color": "fff",
-                "coltwo": "396"
-            }
-        ],
-        "typography": [
-            {
-                "fonts": "<link href='https://fonts.googleapis.com/css?family=PT+Sans&display=swap' rel='stylesheet'>",
-                "glob": "PT Sans",
-                "text": "PT Sans"
-            }
-        ],
-        "webdev": true,
-        "analytics": [
-            {
-                "result": "",
-                "img": ""
-            }
-        ],
-        "responsive": [
-            {
-                "percent": "100",
-                "dash": "100 0"
-            }
-        ],
-        "deadline": "На выполнение задачи потребовалось более одной недели.",
         "tms": false,
         "testimonials": [
             {
@@ -1193,8 +1186,8 @@
         "client": "",
         "prev": [
             {
-                "src": "Bq8OnGshVBZ",
-                "height": "567"
+                "src": "B41oRP4g9Lt",
+                "height": "590"
             }
         ],
         "done": [
@@ -1227,7 +1220,7 @@
             {
                 "name": "Фоновые цвета",
                 "color": "29496F",
-                "coltwo": "fff"
+                "coltwo": "FFFFFF"
             }
         ],
         "typography": [
@@ -1348,7 +1341,7 @@
             },
             {
                 "name": "Вторичный цвет",
-                "color": "ffffff"
+                "color": "FFFFFF"
             },
             {
                 "name": "Акцентирующий цвет",
@@ -1501,8 +1494,8 @@
             },
             {
                 "name": "Фоновые цвета",
-                "color": "f7fafc",
-                "coltwo": "fff"
+                "color": "F7FAFC",
+                "coltwo": "FFFFFF"
             }
         ],
         "typography": [
@@ -1634,8 +1627,8 @@
             },
             {
                 "name": "Фоновые цвета",
-                "color": "3e372d",
-                "coltwo": "fff"
+                "color": "3E372D",
+                "coltwo": "FFFFFF"
             }
         ],
         "typography": [
@@ -1774,8 +1767,8 @@
             },
             {
                 "name": "Фоновые цвета",
-                "color": "f8f9fa",
-                "coltwo": "fff"
+                "color": "F8F9FA",
+                "coltwo": "FFFFFF"
             }
         ],
         "typography": [
@@ -1918,8 +1911,8 @@
             },
             {
                 "name": "Фоновые цвета",
-                "color": "eeeeee",
-                "coltwo": "ffffff"
+                "color": "EEEEEE",
+                "coltwo": "FFFFFF"
             }
         ],
         "typography": [
@@ -2041,8 +2034,8 @@
             },
             {
                 "name": "Фоновые цвета",
-                "color": "2b2827",
-                "coltwo": "ffffff"
+                "color": "2B2827",
+                "coltwo": "FFFFFF"
             }
         ],
         "typography": [
