@@ -4,14 +4,13 @@
 
 Open Source Portfolio at GitHub
 
-## Visual Studio Code Plugins to Run
+<!-- ## Visual Studio Code Plugins to Run
 
-+ Live Sass Compiler
-+ Live Server
++ Live Sass Compiler (live compilation of SASS or SCSS to CSS) -->
 
-### Settings live Sass Compiler
+<!-- ### Settings live Sass Compiler -->
 
-1. CTRL+SHIFT+/
+<!-- 1. CTRL+SHIFT+/
 2. Search: liveSassCompile.settings.formats
 3. Check: settings.json
 4. Add code:
@@ -24,27 +23,31 @@ Open Source Portfolio at GitHub
         "savePath": "/build/css/"
     }
 ],
-```
+``` -->
 
 ## NPM Sources
 
-node -v `v10.16.0`  
-npm -v `6.11.3`  
+node -v `v12.13.0`  
+npm -v `6.12.0`  
 gulp cli -v `2.2.0`  
 gulp -v `4.0.2`  
 
 + npm i -g gulp-cli
 + npm i -D gulp
 + npm i -D gulp-pug
-+ npm i -D node-sass gulp-sass
-
++ npm i -D gulp-rename
++ npm i -D gulp-plumber
 + npm i -D gulp-sourcemaps
 + npm i -D gulp-concat
+
++ npm i -D node-sass gulp-sass
++ npm i -D gulp-postcss
++ npm i -D autoprefixer
 + npm i -D gulp-merge-media-queries
 + npm i -D gulp-clean-css
+
 + npm i -D gulp-babel @babel/core @babel/preset-env
 + npm i -D gulp-uglify
-+ npm i -D gulp-rename
 
 + npm i -D gulp-cache
 + npm i -D gulp-newer
