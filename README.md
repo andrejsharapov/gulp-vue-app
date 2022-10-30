@@ -1,4 +1,4 @@
-![GitHub Open Source Portfolio by Andrej Sharapov](https://github.com/andrejsharapov/gulp-vue-app/share.png)
+![GitHub Open Source Portfolio by Andrej Sharapov](https://github.com/andrejsharapov/vuejs-app/blob/master/share.png?raw=true)
 
 # andrejsharapov.github.io
 
