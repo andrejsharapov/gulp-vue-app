@@ -1,0 +1,124 @@
+// Colors
+$white: #ffffff;
+$whitesmoke: #f4f4f4;
+$gray: #e5e5e5;
+$darkgray: #a4a4a4;
+$dark: #21213d;
+$black: #1a1b1f;
+
+// Contents
+$side: 320px;
+$line-size: 32px;
+
+// Animation
+$time: 500ms;
+$cubic: cubic-bezier(0.57, 0.21, 0.69, 1);
+
+// Sizes
+$w-size: 48px;
+$min-width: .25em;
+
+// Breakpoints
+$mi: 20em; // (min-width: 320px)
+$sx: 30em; // (min-width: 480px)
+$sm: 36em; // (min-width: 576px)
+$md: 48em; // (min-width: 768px)
+$lg: 62em; // (min-width: 992px)
+$de: 64em; // (min-width: 1024px)
+$xl: 75em; // (min-width: 1200px)
+
+@mixin mq($size) {
+
+    @if $size==sx {
+        @media (max-width: $sx) {
+            @content;
+        }
+    }
+
+    @else if $size==sm {
+        @media (min-width: $sm) {
+            @content;
+        }
+    }
+
+    @else if $size==md {
+        @media (min-width: $md) {
+            @content;
+        }
+    }
+
+    @else if $size==lg {
+        @media (min-width: $lg) {
+            @content;
+        }
+    }
+
+    @else if $size==de {
+        @media (min-width: $de) {
+            @content;
+        }
+    }
+
+    @else if $size==xl {
+        @media (min-width: $xl) {
+            @content;
+        }
+    }
+}
+
+$breakpoints: (
+    sm: (min-width: $sm),
+    md: (min-width: $md),
+    lg: (min-width: $lg),
+);
+
+$sizes: (
+    h1: (sm: 1.935, md: 2.25, lg: 3),
+    h2: (sm: 1.75, md: 2.15, lg: 2.25),
+    h3: (sm: 1.35, md: 1.75, lg: 2),
+    h4: (sm: 1.25, md: 1.45, lg: 1.75),
+    h5: (sm: 1.15, md: 1.25, lg: 1.5),
+    h6: (sm: 1, md: 1.15, lg: 1.55),
+);
+
+@each $query-id,
+$query in $breakpoints {
+    $query-property: nth(map-keys($query), 1);
+    $query-value: nth(map-values($query), 1);
+
+    @media (#{$query-property}: #{$query-value}) {
+
+        @each $tag,
+        $sizes-list in $sizes {
+            #{$tag} {
+                $size: map-get($sizes-list, $query-id);
+
+                @if (unitless($size)) {
+                    $size: $size * 1rem;
+                }
+
+                font-size: $size;
+            }
+        }
+    }
+}
+
+@mixin pagePalette($deg: 45deg, $pageColor: var(--page-color), $subColor: var(--sub-color)) {
+    background-image: linear-gradient($deg,
+            $pageColor 50%,
+            $subColor 100%);
+}
+
+@mixin dragcur {
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: -o-grab;
+    cursor: grab;
+
+    &:active {
+        cursor: -webkit-grabbing;
+        cursor: -moz-grabbing;
+        cursor: -o-grabbing;
+        cursor: grabbing;
+    }
+}

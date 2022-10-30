@@ -1,0 +1,103 @@
+@import '../_vars'
+
+.bgpage
+    @include mq(lg)
+        background-image: url(/src/bg/banners.svg)
+        background-position: calc(100% - 20px) 120px
+
+.to
+    font-size: 14px            
+    color: $darkgray
+
+.grid-projects
+    display: grid
+    grid-template-rows: repeat(auto-fit, minmax(0, 1fr))
+    
+    .project
+        position: relative
+        margin-bottom: calc(#{$min-width} * 4)
+
+        &-about
+            @include mq(md)
+                padding: calc(#{$min-width} * 4)
+                background-color: $white
+
+                small
+                    @include mq(md)
+                        text-align: center
+
+        &-caption
+            margin: auto
+            max-width: 80%
+            display: -webkit-box
+            -webkit-box-orient: vertical
+            -webkit-line-clamp: 4
+            overflow: hidden
+            max-height: 92px
+            color: $darkgray
+
+        &-image
+            position: relative
+            margin-top: 1em
+            margin-bottom: 1em
+            display: flex
+            justify-content: center
+
+            &.bnr240x400,
+            &.bnr728x90
+                &::after
+                    margin-bottom: .5em
+                    display: block
+                    min-height: 150px
+                    padding: 2em
+                    content: 'Просмотр контента доступен только при разрешении экрана 576px и выше'
+                    text-align: center
+                    font-weight: 700
+                    color: var(--col4a)
+                    background-color: $white
+                    background-image: url(/src/dots-small.svg)
+                    background-repeat: repeat
+                    background-attachment: fixed
+
+            &.bnr240x400
+                &::after
+                    @include mq(sm)
+                        display: none
+
+                iframe
+                    display: none
+                    
+                    @include mq(sm)
+                        display: block
+
+            &.bnr728x90
+                &::after
+                    @include mq(lg)
+                        display: none
+
+                iframe
+                    display: none
+                    
+                    @include mq(lg)
+                        display: block
+
+iframe
+    &#demo
+        margin-top: -2px
+        margin-left: -2px
+        width: 244px
+        height: 404px
+
+    @include mq(md)
+        &.bnr728x90
+            width: 728px
+            height: 90px
+            border: 0
+            box-shadow: 0 0 10px rgba($dark, .15)
+          
+    @include mq(sm)  
+        &.bnr240x400
+            width: 240px
+            height: 400px
+            border: 0
+            box-shadow: 0 0 10px rgba($dark, .15)

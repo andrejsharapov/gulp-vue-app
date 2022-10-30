@@ -1,0 +1,104 @@
+@import '../_vars'
+
+.bgpage
+    @include mq(lg)
+        background-image: url(/src/bg/certs.svg)
+        background-position: calc(100% - 20px) 115px
+
+.grid-certs
+    display: grid
+    grid-gap: 2em
+
+    @media (min-width: $sm)
+        grid-template-columns: 1fr 1fr
+        margin-bottom: 2em
+
+        &.column-3
+            grid-template-areas: '. .''fw fw'
+
+            .figure:nth-child(3)
+                grid-area: fw
+
+    @media (min-width: $md)
+        &.column-2
+            grid-template-columns: 1fr 1fr
+
+        &.column-3
+            grid-template-columns: 1fr 1fr 1fr
+
+            .figure:nth-child(3)
+                grid-area: auto
+
+    .figure
+        position: relative
+        text-align: center
+        margin: calc(#{$min-width} * 4) auto
+        background-color: $white
+        
+        @media (min-width: $sm)
+            margin-right: calc(#{$min-width} * 2)
+            margin-left: calc(#{$min-width} * 2)
+        
+        @media (min-width: $lg)
+            border: 1px solid #e5e5e5
+
+            &::before
+                position: absolute
+                left: 21px
+                top: 22px
+                z-index: -1
+                content: ''
+                width: 100%
+                height: 100%
+                background-image: url(/src/dots-small.svg)
+
+        &:hover
+            .cert-open
+                opacity: 1
+                transform: translateZ(0) scale(1)
+
+        
+.cert-capt
+    margin: 1.5em auto 0
+    max-width: 90%
+
+.cert
+    &-open
+        display: none
+
+        @include mq(md)
+            display: block
+            position: absolute
+            top: 0
+            right: 0
+            margin-top: calc(#{$min-width} * 2)
+            margin-right: calc(#{$min-width} * 2)
+            transform: translate3d(-5px,5px,0) scale(.95)
+            width: $w-size
+            height: $w-size
+            display: flex
+            justify-content: center
+            align-items: center
+            cursor: pointer
+            font-weight: 600
+            color: $white
+            border-radius: $min-width
+            background-color: var(--page-color)
+            opacity: 0
+            transition: .4s
+
+    &-mask
+        position: fixed
+        top: 0
+        left: 0
+        z-index: 4
+        width: 100vw
+        height: 100vh
+        background-color: rgba(0,0,0, .65)
+
+    &-full
+        position: fixed
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        z-index: 5

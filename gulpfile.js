@@ -1,31 +1,39 @@
+'use strict';
+
+//  Gulp
 const gulp = require('gulp');
-const pug = require('gulp-pug');
 const browserSync = require('browser-sync');
 const plumber = require('gulp-plumber');
 
-const sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
-    concat = require('gulp-concat'),
-    postcss = require('gulp-postcss'),
-    autoprefixer = require('autoprefixer'),
-    mmq = require('gulp-merge-media-queries'),
-    cleanCSS = require('gulp-clean-css'),
-    flatten = require('gulp-flatten');
+// HTML・Pug
+const pug = require('gulp-pug');
 
-const
-    babel = require('gulp-babel'),
-    uglify = require('gulp-uglify'),
-    rename = require("gulp-rename");
+// CSS・Sass
+const sass = require('gulp-sass')(require('sass'));
+const autoprefixer = require('autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
+const concat = require('gulp-concat');
+const mmq = require('gulp-merge-media-queries');
+const cleanCSS = require('gulp-clean-css');
+const flatten = require('gulp-flatten');
 
+// JavaScript
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+const rename = require("gulp-rename");
+
+//
 const cache = require('gulp-cache');
 const newer = require('gulp-newer');
-const imagemin = require('gulp-imagemin'),
-    imageminMozjpeg = require('imagemin-mozjpeg'),
-    imageminOptipng = require('imagemin-optipng'),
-    imageminSvgo = require('imagemin-svgo'),
-    imageminWebp = require('imagemin-webp');
 
-gulp.task('serve', () => {
+// Images
+// import imagemin from 'gulp-imagemin';
+// import imageminMozjpeg from 'imagemin-mozjpeg';
+// import imageminOptipng from 'imagemin-optipng';
+// import imageminSvgo from 'imagemin-svgo';
+// import imageminWebp from 'imagemin-webp';
+
+function serve() {
     browserSync.init({
         server: {
             baseDir: './'
@@ -34,40 +42,48 @@ gulp.task('serve', () => {
         open: true,
         notify: false
     });
-});
+};
 
 const reload = browserSync.reload;
-
 const paths = {
-    html: 'build/pug/pages/*',
-    css: 'build/sass/*.*',
-    js: 'build/js/app.js',
-    jspage: 'build/js/pages/*',
-    csspage: 'build/sass/pages/*',
-    img_bf_min: 'build/src/**/*',
-    img_af_min: 'src/'
+    dest: 'dist',
+    static: 'static',
+    baseDir: 'src',
+
+    // Build app
+    html: `${baseDir}/pug/pages/*`,
+    css: `${baseDir}/sass/*.*`,
+    js: `${baseDir}/js/app.js`,
+
+    // Bundles to pages
+    js_page: `${baseDir}/js/pages/*`,
+    css_page: `${baseDir}/sass/pages/*`,
+
+    // Press images
+    // img_bf_min: `${baseDir}/${static}/img/**/*`,
+    // img_af_min: `${dest}/${static}/img/`
 }
 
-gulp.task('pug', () => {
+function htmlBuild() {
     return gulp.src(paths.html)
         .pipe(plumber())
         .pipe(pug({
             pretty: true
         }))
-        .pipe(gulp.dest('./'))
+        .pipe(gulp.dest(`${paths.dest}`))
         .pipe(reload({
             stream: true
         }));
-});
+};
 
-gulp.task('css', () => {
+function compileSass() {
     return gulp.src(paths.css)
         .pipe(sass({
             outputStyle: 'compressed'
         }).on('error', sass.logError))
         .pipe(plumber())
         .pipe(sourcemaps.init())
-        .pipe(postcss([autoprefixer()]))
+        // .pipe(postcss([autoprefixer()]))
         .pipe(concat('style.css'))
         .pipe(rename({
             suffix: ".min"
@@ -77,14 +93,14 @@ gulp.task('css', () => {
         }))
         .pipe(cleanCSS())
         .pipe(flatten())
-        .pipe(sourcemaps.write('../maps'))
-        .pipe(gulp.dest('css'))
+        .pipe(sourcemaps.write(`../maps`))
+        .pipe(gulp.dest(`${paths.dest}/css`))
         .pipe(reload({
             stream: true
         }));
-});
+};
 
-gulp.task('js', () => {
+function bundleAppJs() {
     return gulp.src(paths.js)
         .pipe(plumber())
         .pipe(sourcemaps.init())
@@ -97,14 +113,14 @@ gulp.task('js', () => {
             suffix: ".min"
         }))
         .pipe(sourcemaps.write('../maps'))
-        .pipe(gulp.dest('js'))
+        .pipe(gulp.dest(`${paths.dest}/js`))
         .pipe(reload({
             stream: true
         }));
-});
+};
 
-gulp.task('jspage', () => {
-    return gulp.src(paths.jspage)
+function bundleJsToPage() {
+    return gulp.src(paths.js_page)
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(babel({
@@ -115,22 +131,19 @@ gulp.task('jspage', () => {
             suffix: ".min"
         }))
         .pipe(sourcemaps.write('../maps'))
-        .pipe(gulp.dest('js'))
+        .pipe(gulp.dest(`${paths.dest}/js`))
         .pipe(reload({
             stream: true
         }));
-});
+};
 
-// simple conversion of the SASS format. Instead "sisass". Conversions, grouping and watching
-
-gulp.task('csspage', () => {
-    return gulp.src(paths.csspage)
+function compileSassToPage() {
+    return gulp.src(paths.css_page)
         .pipe(sass({
             outputStyle: 'compressed'
         }).on('error', sass.logError))
         .pipe(plumber())
         .pipe(sourcemaps.init())
-        .pipe(postcss([autoprefixer()]))
         .pipe(rename({
             suffix: ".min"
         }))
@@ -140,42 +153,56 @@ gulp.task('csspage', () => {
         .pipe(cleanCSS())
         .pipe(flatten())
         .pipe(sourcemaps.write('../maps'))
-        .pipe(gulp.dest('css'))
+        .pipe(gulp.dest(`${paths.dest}/css`))
         .pipe(reload({
             stream: true
         }));
-});
+};
 
-gulp.task('watching', () => {
-    gulp.watch(paths.html, gulp.parallel('pug'))
-    gulp.watch(paths.css, gulp.parallel('css'))
-    gulp.watch(paths.js, gulp.parallel('js'))
-    gulp.watch(paths.jspage, gulp.parallel('jspage'))
-    gulp.watch(paths.csspage, gulp.parallel('csspage'));
-});
+function watching() {
+    gulp.watch(paths.html, gulp.parallel('pug'));
+    gulp.watch(paths.css, gulp.parallel('sass'));
+    gulp.watch(paths.js, gulp.parallel('js'));
+    gulp.watch(paths.js_page, gulp.parallel('jsToPage'));
+    gulp.watch(paths.css_page, gulp.parallel('sassToPage'));
+};
 
-gulp.task('build', gulp.parallel('pug', 'css', 'js', 'jspage', 'csspage', 'serve', 'watching'));
+function buildApp() {
+    gulp.parallel('pug', 'sass', 'js', 'jsToPage', 'sassToPage', 'serve', 'watching')
+};
 
-gulp.task('imgmin', () => {
-    return gulp.src(paths.img_bf_min)
-        .pipe(newer(paths.img_bf_min))
-        .pipe(cache(imagemin([
-            imageminOptipng({
-                optimizationLevel: 5
-            }),
-            imageminMozjpeg({
-                progressive: true
-            }),
-            imageminSvgo({
-                plugins: [{
-                    removeViewBox: false
-                }, ]
-            }),
-            imageminWebp({
-                quality: 50
-            })
-        ], {
-            verbose: true
-        })))
-        .pipe(gulp.dest(paths.img_af_min))
-});
+// function optimizeImages() {
+//     return gulp.src(paths.img_bf_min)
+//         .pipe(newer(paths.img_bf_min))
+//         .pipe(cache(imagemin([
+//             imageminOptipng({
+//                 optimizationLevel: 5
+//             }),
+//             imageminMozjpeg({
+//                 progressive: true
+//             }),
+//             imageminSvgo({
+//                 plugins: [{
+//                     removeViewBox: false
+//                 },]
+//             }),
+//             imageminWebp({
+//                 quality: 50
+//             })
+//         ], {
+//             verbose: true
+//         })))
+//         .pipe(gulp.dest(paths.img_af_min))
+// };
+
+module.exports = {
+    serve: serve,
+    pug: htmlBuild,
+    sass: compileSass,
+    js: bundleAppJs,
+    jsToPage: bundleJsToPage,
+    sassToPage: compileSassToPage,
+    watching,
+    // optimizeImages,
+    buildApp,
+};

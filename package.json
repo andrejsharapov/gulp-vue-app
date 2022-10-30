@@ -1,10 +1,11 @@
 {
-  "name": "andrejsharapov.github.io",
+  "name": "gulp-vue-app",
   "version": "1.0.0",
   "description": "Open Source Portfolio at GitHub",
-  "main": "gulpfile.js",
+  "main": "index.js",
   "scripts": {
-    "test": "build"
+    "cache": "npx gulp cache",
+    "dev": "gulp"
   },
   "repository": {
     "type": "git",
@@ -23,35 +24,36 @@
   },
   "homepage": "https://github.com/andrejsharapov/andrejsharapov.github.io#readme",
   "browserslist": [
-    "last 3 version",
+    "last 2 version",
     "> 1%",
     "maintained node versions"
   ],
   "devDependencies": {
-    "@babel/core": "^7.7.0",
-    "@babel/preset-env": "^7.7.1",
-    "autoprefixer": "^9.7.3",
-    "browser-sync": "^2.26.7",
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
+    "autoprefixer": "^10.4.13",
+    "browser-sync": "^2.27.10",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-cache": "^1.1.3",
-    "gulp-clean-css": "^4.2.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-flatten": "^0.4.0",
-    "gulp-imagemin": "^6.1.1",
+    "gulp-imagemin": "^8.0.0",
     "gulp-merge-media-queries": "^0.2.1",
     "gulp-newer": "^1.4.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
-    "gulp-pug": "^4.0.1",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
+    "gulp-pug": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
-    "imagemin-mozjpeg": "^8.0.0",
-    "imagemin-optipng": "^7.1.0",
-    "imagemin-svgo": "^7.0.0",
-    "imagemin-webp": "^5.1.0",
-    "node-sass": "^4.13.0"
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^10.0.1",
+    "imagemin-webp": "^7.0.0",
+    "node-sass": "^7.0.3",
+    "sass": "^1.55.0"
   }
 }

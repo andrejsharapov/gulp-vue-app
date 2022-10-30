@@ -1,4 +1,39 @@
-build/src
-*.map
 node_modules
+
+# Lock
 package-lock.json
+yarn.lock
+
+# Build
+*map*
+
+# Logs
+/logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Dotenv environment variables file
+.env
+
+# IDE / Editor
+.idea
+
+# SFTP
+sftp.*
+
+# Tests
+**tests**

@@ -1,0 +1,550 @@
+@import '../_vars'
+  
+.bgpage
+    @include mq(lg)
+        background-image: url(/src/bg/cases.svg)
+        background-position: calc(100% - 20px) 105px
+
+#counters
+    margin-top: $min-width * 2
+    margin-bottom: $min-width * 4
+
+.counter
+    padding: .5em
+    display: grid
+    grid-template-columns: 1fr
+    grid-gap: $min-width
+
+    @media (min-width: $sm)
+        grid-template-columns: 1fr 1fr
+        grid-gap: calc(#{$min-width} * 4)
+
+    @media (min-width: $xl)
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        grid-gap: calc(#{$min-width} * 2)
+
+    p
+        margin-bottom: 0
+
+    &_block
+        display: inherit
+        grid-template-columns: minmax(max-content, 30%) 1fr
+        grid-gap: calc(#{$min-width} * 4)
+        align-items: center
+
+        @media (min-width: $xl)
+            grid-template-columns: 1fr
+
+    &__num
+        grid-row-end: 2
+
+        font-family: 'Merriweather', sans-serif
+        font-size: 11vw
+        font-weight: 900
+            
+        color: transparent
+        -webkit-background-clip: text
+                background-clip: text
+        @include pagePalette(-45deg, $subColor: var(--col2a))
+
+        @include mq(sm)
+            font-size: 5vw
+
+        @include mq(md)
+            font-size: 4vw
+            padding-left: $min-width * 2
+
+        @include mq(lg)
+            font-size: 3vw
+
+    &__text
+        white-space: nowrap
+
+        @media (min-width: $lg)
+            padding-left: 0.5em
+    
+        span
+            display: block
+
+            font-size: 1.25rem
+            font-weight: 900
+            
+.grid-projects
+    display: grid
+    grid-template-rows: repeat(auto-fit, minmax(0, 1fr))
+
+    .to
+        font-size: 14px
+        color: $darkgray
+
+    .project
+        position: relative
+        margin-bottom: calc(#{$min-width} * 4)
+
+        @include mq(lg)
+            display: grid
+            grid-template-columns: 15% 50% minmax(auto, 45%)
+            grid-template-rows: min-content
+            align-items: center
+            justify-content: space-between
+            
+        &-image
+            position: relative
+            margin-right: calc(-1 * calc(#{$min-width} * 4))
+            margin-bottom: calc(#{$min-width} * 4)
+            margin-left: calc(-1 * calc(#{$min-width} * 4))
+            display: block
+            cursor: pointer
+
+            @include mq(sm)
+                border-radius: $min-width * 2
+
+            @include mq(md)
+                margin-bottom: 2em
+                transition: all .4s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+
+                &::after
+                    position: absolute
+                    top: 0
+                    left: 0
+                    z-index: -1
+                    content: ''
+                    width: 100%
+                    height: 100%
+                    background-image: url(/src/dots-small.svg)
+
+            @include mq(lg)
+                margin: 0 2em 3em 0
+
+                &:hover
+                    box-shadow: 20px 20px 20px #b1b3b47F
+                    transform: translate(-0.5em, -0.5em)
+
+            img
+                display: block
+                margin: 0
+                width: 100%
+                height: 300px
+                max-height: 300px
+                object-fit: cover
+
+                @include mq(sm)
+                    border-radius: $min-width * 2
+
+            &.fullImage
+                position: fixed
+                top: 0
+                right: 0
+                left: 0
+                z-index: 4
+                margin: 0
+                height: 100vh
+                transform-origin: 50% 50%
+                animation: fullImage 1s cubic-bezier(.175, .885, .32,1) forwards
+
+                &::after
+                    position: absolute
+                    top: 0
+                    right: 0
+                    bottom: 0
+                    left: 0
+                    z-index: -1
+                    content: ''
+                    width: 100vw
+                    height: 100vh
+                    background-color: $white
+                    background-image: url(/src/dots-large.svg)
+
+                &:hover
+                    box-shadow: none
+                    transform: none
+
+                img
+                    max-height: auto
+                    max-height: 100vh
+                    height: 100%
+                    border-radius: 0
+                    object-fit: cover
+
+        &-about
+            @include mq(md)
+                padding: calc(#{$min-width} * 4)
+                background-color: $white
+
+        &-cms
+            .tag
+                margin-right: $min-width
+                margin-left: $min-width
+
+        &-caption
+            color: $darkgray
+
+            display: -webkit-box
+            -webkit-box-orient: vertical
+            -webkit-line-clamp: 4
+            overflow: hidden
+
+.pr
+    &-full
+        position: fixed
+        top: 0
+        right: 0
+        left: 0
+        overflow-x: hidden
+        overflow-y: auto
+        z-index: 5
+        padding-top: 30vh
+        width: 100vw
+        height: 100%
+        min-height: 100vh
+        --size: #{$w-size}
+        
+        h3
+            color: var(--page-color)
+        
+            &.pr-stage
+                @include mq(xl)
+                    position: relative
+                    margin-left: -2.25em
+                    background-color: $white
+
+    &-bg
+        position: absolute
+        bottom: calc(100% - 1px)
+        left: 0
+        width: 100%
+        min-height: 22vh
+        background-image: url(/src/pro-top-bg.png)
+        background-position: 0 100%
+        background-repeat: no-repeat
+        background-size: cover
+        animation: show-content 1s linear 1.5s forwards
+
+    &-container
+        position: relative
+        padding-top: 3em
+        padding-bottom: 3em
+        background-color: $white
+        background-image: url(/src/pro-bg.png)
+        background-repeat: no-repeat
+        background-position: center bottom
+    
+        transform: scale(0)
+        transform-origin: 0 100%
+        animation: full-open 1s cubic-bezier(.835, -0.005, .06, 1) 500ms forwards
+
+        @include mq(sm)
+            .container
+                border: 1px solid $gray
+                border-radius: $min-width
+                transition: border 1.2s linear
+
+    &-close
+        position: relative
+        z-index: 1
+        margin-top: -10px
+        margin-right: -15px
+        margin-left: auto
+        padding-top: calc(#{$min-width} * 4)
+        display: flex
+        justify-content: center
+        align-items: center
+        width: var(--size)
+        height: var(--size)
+        color: $white
+        cursor: pointer
+
+    &-content
+        position: relative
+        padding-top: calc(#{$min-width} * 3)
+        min-height: 100vh
+        opacity: 0
+        visibility: hidden
+        animation: show-content 1s linear 1.5s forwards
+
+        @include mq(sm)
+            padding-right: calc(#{$min-width} * 4)
+            padding-left: calc(#{$min-width} * 4)
+
+    &-title
+        position: absolute
+        top: -2.15em
+        left: 0
+        padding-right: calc(#{$min-width} * 2)
+        padding-left: calc(#{$min-width} * 2)
+        background-color: $white
+
+    &-website
+        display: grid
+        grid-gap: calc(#{$min-width} * 2)
+
+        @include mq(lg)
+            margin-bottom: 1.25em
+            grid-template-columns: repeat(4, 1fr)
+            padding: calc(#{$min-width} * 4)
+            border-radius: $min-width
+
+            p
+                span
+                    display: block
+                    font-weight: 700
+    
+    &-devs
+        margin-bottom: calc(#{$min-width} * 4)
+
+        @include mq(lg)
+            display: grid
+            grid-template-columns: repeat(auto-fit, minmax(0, 1fr))
+            grid-gap: calc(#{$min-width} * 2)
+            align-items: flex-start
+
+        summary
+            color: $white
+
+        ul            
+            padding: .75em
+            border-bottom-left-radius: $min-width
+            border-bottom-right-radius: $min-width
+            border-color: $gray
+            border-style: solid
+            border-width: 0 1px 1px 1px
+
+            li
+                white-space: nowrap
+
+    &-role
+        margin-bottom: calc(#{$min-width} * 4)
+
+        .role-grid
+            display: grid
+
+            @include mq(lg)
+                grid-template-columns: repeat(auto-fit, minmax(0, 1fr))
+                gap: 2em
+
+    &-client
+        margin-bottom: calc(#{$min-width} * 4)
+        display: flex
+        flex-direction: column
+
+        @include mq(md)
+            flex-flow: row wrap
+            justify-content: space-between
+
+        .pr-image,
+        .pr-about,
+        .pr-tasks
+            @include mq(lg)
+                flex-basis: calc((100% - 2em) / 2)
+                flex-grow: 1
+
+        .pr-image
+            margin: 0 auto 1.5em
+            width: 100%
+
+            @include mq(sm)
+                padding-right: 1.5em
+
+        .pr-prev
+            margin-right: -1em
+            margin-left: -1em
+            min-width: 248px
+            text-align: center
+
+            @include mq(sm)
+                margin: 0
+                min-width: 425px
+                box-shadow: 0 10px 20px rgba($black, .16)
+                border-radius: $min-width * 2
+                overflow: hidden
+
+        .pr-src
+            display: block
+            width: 100%
+            object-fit: cover
+
+    &-tasks
+        margin-bottom: calc(#{$min-width} * 4)
+
+    &-done
+        padding: 3em calc(#{$min-width} * 4)
+        border-radius: $min-width
+        background-color: $gray
+        margin-bottom: calc(#{$min-width} * 4)
+
+    &-palette
+        margin-bottom: calc(#{$min-width} * 4)
+
+        .pr
+            &-colors
+                display: grid
+                grid-gap: calc(#{$min-width} * 4)
+                align-items: start
+
+                @include mq(md)
+                    grid-template-columns: repeat(4, 1fr)
+
+            &-col
+                position: relative
+                display: grid
+                grid-template-columns: 1fr 1fr
+                text-align: center
+
+                @include mq(sm)
+                    grid-template-columns: 1fr
+                    grid-template-rows: 1fr min-content
+                    grid-gap: calc(#{$min-width} * 4)
+
+                .palette
+                    display: block
+                    min-width: 110px
+                    width: 100%
+                    height: 75px
+                    border-radius: $min-width
+
+                    @include mq(lg)
+                        margin: auto
+                        width: 150px
+                        height: 100px
+
+                    &_name
+                        text-align: left
+
+                        @include mq(md)
+                            text-align: center
+
+                    &_add
+                        position: absolute
+                        top: 10%
+                        right: 10px
+                        width: 50%
+                        box-shadow: 4px 4px 15px rgba($black, .1)
+
+                        @include mq(sm)
+                            right: -10px
+
+                        @include mq(md)
+                            top: 25%
+
+            &-col-val
+                font-weight: 700
+
+            &-hex
+                padding-right: calc(#{$min-width} * 2)
+                color: $darkgray
+                
+                &_add
+                    display: block
+
+                    @include mq(sm)
+                        display: inline-block
+                        margin-left: 2em
+    
+    &-typography
+        .t-content
+            display: grid
+            grid-gap: calc(#{$min-width} * 2)
+
+            border-radius: $min-width
+            margin-bottom: calc(#{$min-width} * 4)
+
+            @include mq(md)
+                grid-template-columns: 1fr 1fr
+                align-items: flex-end
+
+            .t-head,
+            .t-text
+                padding: calc(#{$min-width} * 4)
+
+            .t-for
+                    color: $darkgray
+                    
+                    @include mq(md)
+                        margin-right: 1em
+                        writing-mode: vertical-rl
+                        transform: rotate(180deg)
+
+            .t-size
+                    margin-bottom: 0px
+                    font-size: 14vw
+                    line-height: 1
+
+    
+    &-analytics,
+    &-responsive
+        img
+            @include mq(md)
+                margin: auto
+                display: block
+    
+    &-testimonials
+        padding-top: calc(#{$min-width} * 8)
+        padding-bottom: calc(#{$min-width} * 4)
+
+        .t-content
+            @include mq(lg)
+                display: grid
+                grid-template-columns: repeat(auto-fit, minmax(0, 1fr))
+                grid-gap: calc(#{$min-width} * 2)
+                align-items: flex-start
+
+                img
+                    margin: auto
+                    width: 80%
+                    max-width: 355px
+
+    &-endworks
+        margin-bottom: calc(#{$min-width} * 4)
+        display: grid
+        grid-gap: 2em
+
+        @include mq(lg)
+            grid-template-columns: 1fr 1fr
+            align-items: flex-start
+    
+    &-deadline
+        display: flex
+        align-items: flex-end
+        
+        h4
+            position: relative
+            margin-bottom: -0.75em
+            margin-left: calc(calc(-1 * #{$min-width}) * 3.6)
+            padding-right: calc(#{$min-width} * 4)
+            padding-left: calc(#{$min-width} * 4)
+            display: inline-block
+            background-color: $white
+
+
+.chart
+    .percent
+        --svgw: 220px
+        position: relative
+        margin: auto
+        display: block
+        width: var(--svgw)
+        height: var(--svgw)
+
+        @include mq(sm)
+            --svgw: 270px
+
+@keyframes fullImage
+    0%
+        width: 100%
+        height: 100vh
+        transform: scale3d(1, 1, 1) translate3d(0, 0, 0)
+        animation-timing-function: cubic-bezier(.175, .885, .32,1)
+    100%
+        width: 100%
+        height: 30vh
+
+@keyframes full-open
+    0%
+        transform: scaleY(0)
+    100%
+        transform: scaleY(1)
+
+@keyframes show-content
+    100%
+        opacity: 1
+        visibility: visible
