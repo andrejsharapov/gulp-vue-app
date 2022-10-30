@@ -612,7 +612,7 @@ aside {
     color: $white;
 
     transform: translateX(-100%);
-    transition: all $time / 2 $cubic;
+    transition: all calc($time / 2) $cubic;
     will-change: transform;
 
     &.show {
@@ -738,7 +738,7 @@ aside {
 article {
     width: 100%;
     transform-origin: 50% 10%;
-    transition: all $time / 2 $cubic;
+    transition: all calc($time / 2) $cubic;
 
     @include mq(md) {
         &.scale {
