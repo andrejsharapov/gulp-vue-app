@@ -1,6 +1,6 @@
 Vue.component('site-skill-list', {
     props: [ 'skills' ],
-    template: `<div id="skillsLanguage" v-for="(item, index) in skills" :key="index"><div class="skill-container" v-for="(i, index) in item.banners" :key="index"><p class="lang_name">{{ i.langName }}</p><div class="skill-block"><img :src="'/src/skills/' + i.image" loading='lazy' :alt="i.langName"></div></div></div>`,
+    template: `<div id="skillsLanguage" v-for="(item, index) in skills" :key="index"><div class="skill-container" v-for="(i, index) in item.banners" :key="index"><p class="lang_name">{{ i.langName }}</p><div class="skill-block"><img :src="'/static/skills/' + i.image" loading='lazy' :alt="i.langName"></div></div></div>`,
 });
 
 Vue.component('projects-list', {

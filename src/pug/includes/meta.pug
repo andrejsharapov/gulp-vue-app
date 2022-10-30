@@ -4,7 +4,7 @@ meta(property="og:title"        content= siteName + ' — ' + pageTitle)
 meta(property="og:description"  content= pageDesc)
 meta(property="og:site_name"    content= siteName)
 meta(property="og:url"          content= siteUrl + headId)
-meta(property="og:image"        content=siteUrl + "src/share.png")
+meta(property="og:image"        content=siteUrl + "static/share.png")
 meta(property="og:locale"       content= locale)
 meta(property="og:type"         content="website")
 
@@ -14,8 +14,8 @@ meta(name="twitter:description" content= pageDesc)
 meta(name="twitter:url"         content= siteUrl + headId)
 meta(name="twitter:site"        content='@andrejsharapov')
 meta(name="twitter:creator"     content="@andrejsharapov")
-meta(name="twitter:image:src"   content=siteUrl + "src/share.png")
-link(rel="image_src"            href=siteUrl + "src/share.png")
+meta(name="twitter:image:src"   content=siteUrl + "static/share.png")
+link(rel="image_src"            href=siteUrl + "static/share.png")
 
 meta(name="yandex-verification" content="a890149c90e4e57f")
 block postmeta
@@ -42,7 +42,7 @@ script(type="application/ld+json").
             ],
             "gender": "Male",
             "url": "#{siteUrl}",
-            "image": "#{siteUrl}src/share.png",
+            "image": "#{siteUrl}static/share.png",
             "birthPlace": {
                 "@type": "Place",
                 "address": {
@@ -60,7 +60,7 @@ script(type="application/ld+json").
             "name": "#{siteName}",
             "alternateName": "Andrej Sharapov",
             "url": "#{siteUrl}",
-            "image": "#{siteUrl}src/share.png",
+            "image": "#{siteUrl}static/share.png",
             "description": "Web-designer, Full stack / Frontend developer"
         }
     ]
