@@ -31,7 +31,7 @@ const imageminOptipng = require('imagemin-optipng')
 const imageminSvgo = require('imagemin-svgo')
 const imageminWebp = require('imagemin-webp')
 
-const baseDir = './tests/'
+const baseDir = './dist'
 
 function serve() {
     browserSync.init({
