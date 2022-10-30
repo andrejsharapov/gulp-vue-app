@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "cache": "npx gulp cache",
-    "dev": "gulp"
+    "dev": "gulp serve",
+    "watch": "gulp watching",
+    "start": "gulp pug sass js jsToPage cssToPage serve watching"
   },
   "repository": {
     "type": "git",
@@ -39,20 +41,19 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-flatten": "^0.4.0",
-    "gulp-imagemin": "^8.0.0",
+    "gulp-imagemin": "7.1.0",
     "gulp-merge-media-queries": "^0.2.1",
     "gulp-newer": "^1.4.0",
     "gulp-plumber": "^1.2.1",
-    "gulp-postcss": "^8.0.0",
     "gulp-pug": "^5.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
-    "imagemin-mozjpeg": "^10.0.0",
-    "imagemin-optipng": "^8.0.0",
-    "imagemin-svgo": "^10.0.1",
-    "imagemin-webp": "^7.0.0",
+    "imagemin-mozjpeg": "8.0.0",
+    "imagemin-optipng": "7.1.0",
+    "imagemin-svgo": "7.0.0",
+    "imagemin-webp": "5.1.0",
     "node-sass": "^7.0.3",
     "sass": "^1.55.0"
   }
